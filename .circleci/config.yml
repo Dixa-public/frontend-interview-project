@@ -3,32 +3,33 @@ version: 2.1
 jobs:
   build:
     working_directory: ~/frontend-interview-project
-    docker: circleci/node:10.13.0
+    docker:
+      - image: circleci/node:10.13.0
   steps:
     - checkout
 
-    -restore_cache: # Restore the dependency cache
+    - restore_cache: # Restore the dependency cache
         keys:
           - dependency-cache-{{ checksum "package-lock.json" }}
           - dependency-cache-
 
-    -run:
+    - run:
       name: Installing dependencies
       command: npm ci
 
-    -save_cache:
+    - save_cache:
       key: dependency-cache-{{ checksum "package-lock.json" }}
       paths:
         - ./node_modules
-    -run:
+    - run:
       name: Run lint
       command: npm run lint
 
-    -run:
+    - run:
       name: Run tests
       command: npm t
 
-    -run:
+    - run:
       name: Build storybook
       command: npm run build-storybook
 
