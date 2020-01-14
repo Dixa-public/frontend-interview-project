@@ -5,31 +5,31 @@ jobs:
     working_directory: ~/frontend-interview-project
     docker:
       - image: circleci/node:10.13.0
-  steps:
-    - checkout
+    steps:
+      - checkout
 
-    - restore_cache: # Restore the dependency cache
+      - restore_cache: # Restore the dependency cache
         keys:
           - dependency-cache-{{ checksum "package-lock.json" }}
           - dependency-cache-
 
-    - run:
-      name: Installing dependencies
-      command: npm ci
+      - run:
+        name: Installing dependencies
+        command: npm ci
 
-    - save_cache:
-      key: dependency-cache-{{ checksum "package-lock.json" }}
-      paths:
-        - ./node_modules
-    - run:
-      name: Run lint
-      command: npm run lint
+      - save_cache:
+        key: dependency-cache-{{ checksum "package-lock.json" }}
+        paths:
+          - ./node_modules
+      - run:
+        name: Run lint
+        command: npm run lint
 
-    - run:
-      name: Run tests
-      command: npm t
+      - run:
+        name: Run tests
+        command: npm t
 
-    - run:
-      name: Build storybook
-      command: npm run build-storybook
+      - run:
+        name: Build storybook
+        command: npm run build-storybook
 
