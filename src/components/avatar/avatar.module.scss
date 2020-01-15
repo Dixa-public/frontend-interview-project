@@ -1,0 +1,49 @@
+.avatar {
+  border-radius: 6px;
+  position: relative;
+
+  &SmallIcon {
+    $small-icon: & !global;
+  }
+}
+
+.background {
+  padding-top: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.image {
+  border-radius: 6px;
+  width: 100%;
+  vertical-align: bottom;
+}
+
+.text {
+  font-family: 'IBM Plex Mono', monospace;
+  color: #fff;
+  font-weight: 600;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 1em;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  text-transform: uppercase;
+}
+
+.icon {
+  color: #fff;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 28px;
+  display: flex;
+  align-items: center;
+
+  #{$small-icon} & {
+    font-size: 22px;
+  }
+}

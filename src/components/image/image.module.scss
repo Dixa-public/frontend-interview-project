@@ -1,0 +1,13 @@
+.image {
+  transition: opacity 1s;
+  width: inherit;
+  opacity: 0;
+}
+
+.error {
+  opacity: 0;
+}
+
+.complete {
+  opacity: 1;
+}

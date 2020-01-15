@@ -1,220 +1,705 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots Button Emoji 1`] = `
-<button
-  onClick={[Function]}
-  style={
-    Object {
-      "backgroundColor": "#FFFFFF",
-      "border": "1px solid #eee",
-      "borderRadius": 3,
-      "cursor": "pointer",
-      "fontSize": 15,
-      "margin": 10,
-      "padding": "3px 10px",
-    }
-  }
-  type="button"
->
-  <span
-    aria-label="so cool"
-    role="img"
-  >
-    😀 😎 👍 💯
-  </span>
-</button>
-`;
-
-exports[`Storyshots Button Text 1`] = `
-<button
-  onClick={[Function]}
-  style={
-    Object {
-      "backgroundColor": "#FFFFFF",
-      "border": "1px solid #eee",
-      "borderRadius": 3,
-      "cursor": "pointer",
-      "fontSize": 15,
-      "margin": 10,
-      "padding": "3px 10px",
-    }
-  }
-  type="button"
->
-  Hello Button
-</button>
-`;
-
-exports[`Storyshots Welcome to Storybook 1`] = `
-<article
-  style={
-    Object {
-      "backgroundColor": "#fff",
-      "color": "#000",
-      "fontFamily": "\\"Helvetica Neue\\", Helvetica, \\"Segoe UI\\", Arial, freesans, sans-serif",
-      "lineHeight": 1.4,
-      "padding": 15,
-    }
-  }
->
-  <h1>
-    Welcome to storybook
-  </h1>
-  <p>
-    This is a UI component dev environment for your app.
-  </p>
-  <p>
-    We've added some basic stories inside the 
-    <code
-      style={
-        Object {
-          "backgroundColor": "#f3f2f2",
-          "border": "1px solid #eae9e9",
-          "borderRadius": 4,
-          "color": "#3a3a3a",
-          "fontSize": 15,
-          "fontWeight": 600,
-          "padding": "2px 5px",
-        }
-      }
-    >
-      src/stories
-    </code>
-     directory.
-    <br />
-    A story is a single state of one or more UI components. You can have as many stories as you want.
-    <br />
-    (Basically a story is like a visual test case.)
-  </p>
-  <p>
-    See these sample 
-    <button
-      onClick={[Function]}
-      style={
-        Object {
-          "backgroundColor": "transparent",
-          "borderBottom": "1px solid #1474f3",
-          "borderLeft": "none",
-          "borderRight": "none",
-          "borderTop": "none",
-          "color": "#1474f3",
-          "cursor": "pointer",
-          "font": "inherit",
-          "padding": 0,
-          "paddingBottom": 2,
-          "textDecoration": "none",
-        }
-      }
-      type="button"
-    >
-      stories
-    </button>
-     for a component called 
-    <code
-      style={
-        Object {
-          "backgroundColor": "#f3f2f2",
-          "border": "1px solid #eae9e9",
-          "borderRadius": 4,
-          "color": "#3a3a3a",
-          "fontSize": 15,
-          "fontWeight": 600,
-          "padding": "2px 5px",
-        }
-      }
-    >
-      Button
-    </code>
-    .
-  </p>
-  <p>
-    Just like that, you can add your own components as stories.
-    <br />
-    You can also edit those components and see changes right away.
-    <br />
-    (Try editing the 
-    <code
-      style={
-        Object {
-          "backgroundColor": "#f3f2f2",
-          "border": "1px solid #eae9e9",
-          "borderRadius": 4,
-          "color": "#3a3a3a",
-          "fontSize": 15,
-          "fontWeight": 600,
-          "padding": "2px 5px",
-        }
-      }
-    >
-      Button
-    </code>
-     stories located at 
-    <code
-      style={
-        Object {
-          "backgroundColor": "#f3f2f2",
-          "border": "1px solid #eae9e9",
-          "borderRadius": 4,
-          "color": "#3a3a3a",
-          "fontSize": 15,
-          "fontWeight": 600,
-          "padding": "2px 5px",
-        }
-      }
-    >
-      src/stories/index.js
-    </code>
-    .)
-  </p>
-  <p>
-    Usually we create stories with smaller UI components in the app.
-    <br />
-    Have a look at the 
-    <a
-      href="https://storybook.js.org/basics/writing-stories"
-      rel="noopener noreferrer"
-      style={
-        Object {
-          "borderBottom": "1px solid #1474f3",
-          "color": "#1474f3",
-          "paddingBottom": 2,
-          "textDecoration": "none",
-        }
-      }
-      target="_blank"
-    >
-      Writing Stories
-    </a>
-     section in our documentation.
-  </p>
-  <p
+exports[`Storyshots Avatar With Gradient Seed 1`] = `
+<div>
+  <div
     style={
       Object {
-        "opacity": 0.5,
+        "width": "45px",
       }
     }
   >
-    <b>
-      NOTE:
-    </b>
-    <br />
-    Have a look at the 
-    <code
+    <div
+      className=""
       style={
         Object {
-          "backgroundColor": "#f3f2f2",
-          "border": "1px solid #eae9e9",
-          "borderRadius": 4,
-          "color": "#3a3a3a",
-          "fontSize": 15,
-          "fontWeight": 600,
-          "padding": "2px 5px",
+          "background": "linear-gradient(315deg, rgb(55,105,230) 0%, rgb(179,164,244) 100%)",
         }
       }
     >
-      .storybook/webpack.config.js
-    </code>
-     to add webpack loaders and plugins you are using in this project.
-  </p>
-</article>
+      <span>
+        KT
+      </span>
+    </div>
+  </div>
+  <br />
+  <div
+    style={
+      Object {
+        "width": "32px",
+      }
+    }
+  >
+    <div
+      className=""
+      style={
+        Object {
+          "background": "linear-gradient(315deg, rgb(185,68,218) 0%, rgb(238,170,217) 100%)",
+        }
+      }
+    >
+      <span>
+        CC
+      </span>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Avatar With Icon 1`] = `
+<div>
+  <div
+    style={
+      Object {
+        "width": "45px",
+      }
+    }
+  >
+    <div
+      className=""
+      style={
+        Object {
+          "backgroundColor": "#5644D8",
+        }
+      }
+    >
+      <i
+        className="fa fa-paper-plane"
+      />
+    </div>
+  </div>
+  <br />
+  <div
+    style={
+      Object {
+        "width": "45px",
+      }
+    }
+  >
+    <div
+      className=""
+      style={
+        Object {
+          "backgroundColor": "#7BC4A9",
+        }
+      }
+    >
+      <i
+        className="fa fa-clock"
+      />
+    </div>
+  </div>
+  <br />
+  <div
+    style={
+      Object {
+        "width": "45px",
+      }
+    }
+  >
+    <div
+      className=""
+      style={
+        Object {
+          "backgroundColor": "#18a8d8",
+        }
+      }
+    >
+      <i
+        className="fa fa-salesforce"
+      />
+    </div>
+  </div>
+  <br />
+  <div
+    style={
+      Object {
+        "width": "45px",
+      }
+    }
+  >
+    <div
+      className=""
+      style={
+        Object {
+          "backgroundColor": "#c14800",
+        }
+      }
+    >
+      <i
+        className="fa fa-magento"
+      />
+    </div>
+  </div>
+  <br />
+  <div
+    style={
+      Object {
+        "width": "32px",
+      }
+    }
+  >
+    <div
+      className="undefined"
+      style={
+        Object {
+          "backgroundColor": "#5644D8",
+        }
+      }
+    >
+      <i
+        className="fa fa-paper-plane"
+      />
+    </div>
+  </div>
+  <br />
+  <div
+    style={
+      Object {
+        "width": "32px",
+      }
+    }
+  >
+    <div
+      className="undefined"
+      style={
+        Object {
+          "backgroundColor": "#7BC4A9",
+        }
+      }
+    >
+      <i
+        className="fa fa-clock"
+      />
+    </div>
+  </div>
+  <br />
+  <div
+    style={
+      Object {
+        "width": "32px",
+      }
+    }
+  >
+    <div
+      className="undefined"
+      style={
+        Object {
+          "backgroundColor": "#18a8d8",
+        }
+      }
+    >
+      <i
+        className="fa fa-salesforce"
+      />
+    </div>
+  </div>
+  <br />
+  <div
+    style={
+      Object {
+        "width": "32px",
+      }
+    }
+  >
+    <div
+      className="undefined"
+      style={
+        Object {
+          "backgroundColor": "#c14800",
+        }
+      }
+    >
+      <i
+        className="fa fa-magento"
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Avatar With Image 1`] = `
+<div>
+  <div
+    style={
+      Object {
+        "width": "45px",
+      }
+    }
+  >
+    <div
+      className=""
+      style={Object {}}
+    >
+      <img
+        className=""
+        onError={[Function]}
+        onLoad={[Function]}
+      />
+    </div>
+  </div>
+  <br />
+  <div
+    style={
+      Object {
+        "width": "45px",
+      }
+    }
+  >
+    <div
+      className=""
+      style={Object {}}
+    >
+      <img
+        className=""
+        onError={[Function]}
+        onLoad={[Function]}
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Avatar With Initials 1`] = `
+<div>
+  <small>
+    User one name John - should print "J".
+  </small>
+  <div
+    style={
+      Object {
+        "width": "45px",
+      }
+    }
+  >
+    <div
+      className=""
+      style={
+        Object {
+          "background": "linear-gradient(315deg, rgb(55,105,230) 0%, rgb(179,164,244) 100%)",
+        }
+      }
+    >
+      <span>
+        J
+      </span>
+    </div>
+  </div>
+  <br />
+  <small>
+    User with only phone number (+4560860931) - should print "31".
+  </small>
+  <div
+    style={
+      Object {
+        "width": "45px",
+      }
+    }
+  >
+    <div
+      className=""
+      style={
+        Object {
+          "background": "linear-gradient(315deg, rgb(55,105,230) 0%, rgb(179,164,244) 100%)",
+        }
+      }
+    >
+      <span>
+        31
+      </span>
+    </div>
+  </div>
+  <br />
+  <small>
+    User with name (John Something), email and phone number - should print "JS".
+  </small>
+  <div
+    style={
+      Object {
+        "width": "45px",
+      }
+    }
+  >
+    <div
+      className=""
+      style={
+        Object {
+          "background": "linear-gradient(315deg, rgb(55,105,230) 0%, rgb(179,164,244) 100%)",
+        }
+      }
+    >
+      <span>
+        JS
+      </span>
+    </div>
+  </div>
+  <br />
+  <small>
+    No name - only email (john@gmail.com) and phone number - should print "JG".
+  </small>
+  <div
+    style={
+      Object {
+        "width": "45px",
+      }
+    }
+  >
+    <div
+      className=""
+      style={
+        Object {
+          "background": "linear-gradient(315deg, rgb(55,105,230) 0%, rgb(179,164,244) 100%)",
+        }
+      }
+    >
+      <span>
+        jg
+      </span>
+    </div>
+  </div>
+  <br />
+  <small>
+    No email - only name (John Something) and phone number - should print "JS".
+  </small>
+  <div
+    style={
+      Object {
+        "width": "45px",
+      }
+    }
+  >
+    <div
+      className=""
+      style={
+        Object {
+          "background": "linear-gradient(315deg, rgb(55,105,230) 0%, rgb(179,164,244) 100%)",
+        }
+      }
+    >
+      <span>
+        JS
+      </span>
+    </div>
+  </div>
+  <br />
+  <h6>
+    Anonymous - only id
+  </h6>
+  <div
+    style={
+      Object {
+        "width": "45px",
+      }
+    }
+  >
+    <div
+      className=""
+      style={
+        Object {
+          "background": "#CACACA",
+        }
+      }
+    >
+      <i
+        className="fa fa-user-secret"
+      />
+    </div>
+  </div>
+  <br />
+  <h6>
+    Unassigned
+  </h6>
+  <div
+    style={
+      Object {
+        "width": "45px",
+      }
+    }
+  >
+    <div
+      className=""
+      style={
+        Object {
+          "background": "#CACACA",
+        }
+      }
+    >
+      <i
+        className="fa fa-user-slash"
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Avatar With User 1`] = `
+<div>
+  <div
+    style={
+      Object {
+        "width": "45px",
+      }
+    }
+  >
+    <div
+      className=""
+      style={Object {}}
+    >
+      <img
+        alt="John Doe"
+        className=""
+        onError={[Function]}
+        onLoad={[Function]}
+      />
+    </div>
+  </div>
+  <br />
+  <div
+    style={
+      Object {
+        "width": "45px",
+      }
+    }
+  >
+    <div
+      className=""
+      style={
+        Object {
+          "background": "linear-gradient(315deg, rgb(55,105,230) 0%, rgb(179,164,244) 100%)",
+        }
+      }
+    >
+      <span>
+        JD
+      </span>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Chart Regular 1`] = `
+<div>
+  <div
+    className=""
+  >
+    <span>
+      10
+    </span>
+    <svg
+      height={72}
+      width={72}
+    >
+      <circle
+        cx={36}
+        cy={36}
+        fill="none"
+        r={30}
+        stroke="#FF9430"
+        strokeDasharray="19.86254575504611 168.63301346034146"
+        strokeDashoffset={47.12388980384689}
+        strokeWidth={12}
+      />
+      <circle
+        cx={36}
+        cy={36}
+        fill="none"
+        r={30}
+        stroke="#46DB75"
+        strokeDasharray="79.45018302018444 109.04537619520313"
+        strokeDashoffset={27.261344048800783}
+        strokeWidth={12}
+      />
+      <circle
+        cx={36}
+        cy={36}
+        fill="none"
+        r={30}
+        stroke="#00A9FF"
+        strokeDasharray="31.581447750523317 156.91411146486425"
+        strokeDashoffset={-52.18883897138367}
+        strokeWidth={12}
+      />
+      <circle
+        cx={36}
+        cy={36}
+        fill="none"
+        r={30}
+        stroke="#D53341"
+        strokeDasharray="57.60138268963371 130.89417652575386"
+        strokeDashoffset={-83.770286721907}
+        strokeWidth={12}
+      />
+    </svg>
+  </div>
+  <div
+    className=""
+  >
+    <span>
+      1
+    </span>
+    <svg
+      height={72}
+      width={72}
+    >
+      <circle
+        cx={36}
+        cy={36}
+        fill="none"
+        r={30}
+        stroke="#FF9430"
+        strokeDasharray="3.7699111843077513 184.72564803107983"
+        strokeDashoffset={47.12388980384689}
+        strokeWidth={12}
+      />
+      <circle
+        cx={36}
+        cy={36}
+        fill="none"
+        r={30}
+        stroke="#46DB75"
+        strokeDasharray="3.7699111843077513 184.72564803107983"
+        strokeDashoffset={43.35397861953914}
+        strokeWidth={12}
+      />
+      <circle
+        cx={36}
+        cy={36}
+        fill="none"
+        r={30}
+        stroke="#00A9FF"
+        strokeDasharray="105.55751316061705 82.93804605477052"
+        strokeDashoffset={39.58406743523139}
+        strokeWidth={12}
+      />
+      <circle
+        cx={36}
+        cy={36}
+        fill="none"
+        r={30}
+        stroke="#D53341"
+        strokeDasharray="75.39822368615503 113.09733552923254"
+        strokeDashoffset={-65.97344572538566}
+        strokeWidth={12}
+      />
+    </svg>
+  </div>
+  <div
+    className=""
+  >
+    <span>
+      345
+    </span>
+    <svg
+      height={72}
+      width={72}
+    >
+      <circle
+        cx={36}
+        cy={36}
+        fill="none"
+        r={30}
+        stroke="#FF9430"
+        strokeDasharray="94.24777960769379 94.24777960769379"
+        strokeDashoffset={47.12388980384689}
+        strokeWidth={12}
+      />
+      <circle
+        cx={36}
+        cy={36}
+        fill="none"
+        r={30}
+        stroke="#46DB75"
+        strokeDasharray="18.84955592153876 169.64600329384882"
+        strokeDashoffset={-47.12388980384689}
+        strokeWidth={12}
+      />
+      <circle
+        cx={36}
+        cy={36}
+        fill="none"
+        r={30}
+        stroke="#00A9FF"
+        strokeDasharray="56.548667764616276 131.9468914507713"
+        strokeDashoffset={-65.97344572538566}
+        strokeWidth={12}
+      />
+      <circle
+        cx={36}
+        cy={36}
+        fill="none"
+        r={30}
+        stroke="#D53341"
+        strokeDasharray="18.84955592153876 169.64600329384882"
+        strokeDashoffset={-122.52211349000191}
+        strokeWidth={12}
+      />
+    </svg>
+  </div>
+  <div
+    className="undefined"
+  >
+    <span>
+      0
+    </span>
+    <svg
+      height={72}
+      width={72}
+    >
+      <circle
+        cx={36}
+        cy={36}
+        fill="none"
+        r={30}
+        stroke="#dcdcdc"
+        strokeWidth={12}
+      />
+    </svg>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Spinner Regular 1`] = `
+<div
+  style={
+    Object {
+      "position": "relative",
+    }
+  }
+>
+  <div
+    className="undefined"
+    style={
+      Object {
+        "borderTopColor": undefined,
+        "borderWidth": "3px",
+        "height": "32px",
+        "width": "32px",
+      }
+    }
+  />
+  <br />
+  <div
+    className="undefined"
+    style={
+      Object {
+        "borderTopColor": "#00cc00",
+        "borderWidth": "3px",
+        "height": "32px",
+        "width": "32px",
+      }
+    }
+  />
+  <br />
+  <div
+    className="undefined"
+    style={
+      Object {
+        "borderTopColor": "tomato",
+        "borderWidth": "3px",
+        "height": "32px",
+        "width": "32px",
+      }
+    }
+  />
+</div>
 `;
