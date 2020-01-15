@@ -8,5 +8,8 @@
 ### Project structure
 All of the components are placed in `src/components/` directory. And all of the storybooks are in `src/stories/`.
 
+### Contibuting guide
+See our [CONTRIBUTING guide](https://github.com/dixahq/frontend-interview-project/blob/master/CONTRIBUTING.md) for details.
+
 ### Development environment
 Please see our [wiki page](https://github.com/dixahq/agent-interface/wiki/Frontend-developer-environment) to setup your editor for automatically apply lint your code.
