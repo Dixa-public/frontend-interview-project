@@ -13,3 +13,6 @@ See our [CONTRIBUTING guide](https://github.com/dixahq/frontend-interview-projec
 
 ### Development environment
 Please see our [wiki page](https://github.com/dixahq/agent-interface/wiki/Frontend-developer-environment) to setup your editor for automatically apply lint your code.
+
+### Implementation details
+Please see [wiki page](https://github.com/dixahq/frontend-interview-project/wiki/Implementation-details) for some of the potentially useful details in development.
