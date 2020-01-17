@@ -11,8 +11,7 @@ All of the components are placed in `src/components/` directory. And all of the 
 ### Contibuting guide
 See our [CONTRIBUTING guide](https://github.com/dixahq/frontend-interview-project/blob/master/CONTRIBUTING.md) for details.
 
-### Development environment
-Please see our [wiki page](https://github.com/dixahq/agent-interface/wiki/Frontend-developer-environment) to setup your editor for automatically apply lint your code.
-
 ### Implementation details
-Please see [wiki page](https://github.com/dixahq/frontend-interview-project/wiki/Implementation-details) for some of the potentially useful details in development.
+
+#### Icon component
+Currently `Icon` component internally uses free `font-awesome` icons. Please see [list](https://fontawesome.com/icons?m=free) of expected `name` values.
