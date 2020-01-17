@@ -48,10 +48,10 @@ class Component extends React.Component {
 
   constructor(props) {
     super(props);
-    
+
     this.increment = this.increment.bind(); // Bind if needed to prevent issue with undefined this
   }
-  
+
   increment() {/* Your method body */}
 
 }
@@ -425,4 +425,3 @@ display,
 
 If you need a `position: relative` wrapper instead make a wrapper inside the root container, that is position relative.
 
-Only use `display` on the root class in very small components, where adding an extra wrapper would be excessive (for example a `Button` component).
