@@ -1,4 +1,28 @@
-## Component development
+# Contributing guidelines
+
+## Table of contents
+
+#### [Writing Components](#writing-components)
+
+- [Use PureComponents whenever possible](#use-purecomponents-whenever-possible)
+- [Do not use arrow functions inside class components](#do-not-use-arrow-functions-inside-class-components)
+- [Passing props](#passing-props)
+- [Using TypeScript](#using-typescript)
+
+#### [Storybook](#storybook)
+
+- [Adding stories](#adding-stories)
+- [Using state in story](#using-state-in-story)
+- [Testing stories with jest](#testing-stories-with-jest)
+
+#### [Styling](#styling)
+- [Scoped CSS/SCSS](#scoped-cssscss)
+- [Using CSS modules](#using-css-modules)
+- [Root class and modifiers](#root-class-and-modifiers)
+- [Modifying child components](#modifying-child-components)
+- [Prevent contextual styling in root class](#prevent-contextual-styling-in-root-class)
+
+## Writing Components
 
 ### Use PureComponents whenever possible
 
@@ -78,10 +102,17 @@ In order to define global types, [types.d.ts](https://github.com/dixahq/frontend
 
 For other examples, see [existing components](https://github.com/dixahq/frontend-interview-project/blob/master/src/components).
 
-## Storybooks
+## Storybook
 
-### Adding a storybook
+### Adding stories
 In order to create a new story or modify existing one, please follow the [guide](https://storybook.js.org/docs/basics/writing-stories/) from official sources. Also see [existing samples](https://github.com/dixahq/frontend-interview-project/tree/master/src/stories).
+
+### Using state in story
+In order to manipulate a story state, use specific [library](https://github.com/Sambego/storybook-state#storybook-state) which provides this functionality.
+
+### Testing stories with jest
+
+All new stories will automatically get a jest snapshot when you run `npm t`, that way the test will fail whenever the result of stories change.
 
 ## Styling
 
@@ -395,7 +426,3 @@ display,
 If you need a `position: relative` wrapper instead make a wrapper inside the root container, that is position relative.
 
 Only use `display` on the root class in very small components, where adding an extra wrapper would be excessive (for example a `Button` component).
-
-### Testing stories with jest
-
-All new stories will automatically get a jest snapshot when you run `npm t`, that way the test will fail whenever the result of stories change.
