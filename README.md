@@ -2,11 +2,20 @@
 
 As part of our application process, we would like you to complete this take-home assignment. It should take no more than a few hours.
 
-### You have two options.:
+### You have 2 options:
 1. Create a new component that you would like us to see and discuss doing the interview.
 2. Improve an existing component by modifying it
 
-You should only pick one of the options above.
+You can pick one of the options above.
+
+### Task notes
+- Consider current task more as a playground, feel free to add/adjust what you think will show off your skills and knowledge in a best way
+- The provided components are not examples of complete or ideal components, therefore:
+  1. They could be improved on
+  2. They could be commented on. It would be also greate if comments question the way we do things or provide an alternative approach
+  3. They could be a building block or an inspiration for creating a new custom component, feature
+
+- There is a [contribution guide](https://github.com/dixahq/frontend-interview-project/blob/master/CONTRIBUTING.md) that we expect to be mostly followed (or questioned)
 
 ### Project setup
 1. Fork this repo
