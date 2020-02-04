@@ -1,0 +1,29 @@
+@mixin scrollable(
+  $trackBG: rgba(255, 255, 255, 0.1),
+  $thumbBG: rgba(255, 255, 255, 0.2),
+  $width: 7px
+) {
+  overflow: hidden;
+  overflow-y: auto;
+  overflow-x: auto;
+
+  &::-webkit-scrollbar {
+    width: $width;
+    height: $width;
+  }
+
+  &::-webkit-scrollbar-track {
+    background-color: $trackBG;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: $thumbBG;
+    border-radius: 5px;
+  }
+}
+
+@mixin flex-centered() {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

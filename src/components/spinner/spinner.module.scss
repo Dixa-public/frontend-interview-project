@@ -1,8 +1,10 @@
+@import '../../styles/import';
+
 .root {
   border-radius: 50%;
   border-style: solid;
-  border-color: #dcdcdc;
-  border-top-color: #5644d8;
+  border-color: $grey-6;
+  border-top-color: $dixa-blue;
   animation: spin 0.8s linear infinite;
   box-sizing: border-box;
 }
