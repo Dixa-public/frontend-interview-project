@@ -33,7 +33,7 @@ All of the components are placed in `src/components/` directory. And all of the 
 ### Contibuting guide
 See our [CONTRIBUTING guide](https://github.com/dixahq/frontend-interview-project/blob/master/CONTRIBUTING.md) for details.
 
-### When your are done
+### When you are done
 When you are ready for us to look at it, give us access to your fork so we can review and run it. When we are done you, of course, own the code you made.
 
 ### Implementation details
