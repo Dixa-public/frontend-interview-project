@@ -15,7 +15,7 @@ You can pick one of the options above.
   2. They could be commented on. It would be also greate if comments question the way we do things or provide an alternative approach
   3. They could be a building block or an inspiration for creating a new custom component, feature
 
-- There is a [contribution guide](https://github.com/dixahq/frontend-interview-project/blob/master/CONTRIBUTING.md) that we expect to be mostly followed (or questioned)
+- There is a [contribution guide](https://github.com/Dixa-public//frontend-interview-project/blob/master/CONTRIBUTING.md) that we expect to be mostly followed (or questioned)
 
 ### Project setup
 1. Fork this repo
@@ -31,7 +31,7 @@ You can pick one of the options above.
 All of the components are placed in `src/components/` directory. And all of the storybooks are in `src/stories/`.
 
 ### Contibuting guide
-See our [CONTRIBUTING guide](https://github.com/dixahq/frontend-interview-project/blob/master/CONTRIBUTING.md) for details.
+See our [CONTRIBUTING guide](https://github.com/Dixa-public/frontend-interview-project/blob/master/CONTRIBUTING.md) for details.
 
 ### When you are done
 When you are ready for us to look at it, give us access to your fork so we can review and run it. When we are done you, of course, own the code you made.

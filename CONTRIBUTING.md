@@ -98,14 +98,14 @@ interface Props {
 const Component: React.FC<Props> = (props) => {/* Your component */};
 ```
 
-In order to define global types, [types.d.ts](https://github.com/dixahq/frontend-interview-project/blob/master/src/types.d.ts) should be modified.
+In order to define global types, [types.d.ts](https://github.com/Dixa-public/frontend-interview-project/blob/master/src/types.d.ts) should be modified.
 
-For other examples, see [existing components](https://github.com/dixahq/frontend-interview-project/blob/master/src/components).
+For other examples, see [existing components](https://github.com/Dixa-public/frontend-interview-project/blob/master/src/components).
 
 ## Storybook
 
 ### Adding stories
-In order to create a new story or modify existing one, please follow the [guide](https://storybook.js.org/docs/basics/writing-stories/) from official sources. Also see [existing samples](https://github.com/dixahq/frontend-interview-project/tree/master/src/stories).
+In order to create a new story or modify existing one, please follow the [guide](https://storybook.js.org/docs/basics/writing-stories/) from official sources. Also see [existing samples](https://github.com/Dixa-public/frontend-interview-project/tree/master/src/stories).
 
 ### Using state in story
 In order to manipulate a story state, use specific [library](https://github.com/Sambego/storybook-state#storybook-state) which provides this functionality.
@@ -118,7 +118,7 @@ All new stories will automatically get a jest snapshot when you run `npm t`, tha
 
 ### Scoped CSS/SCSS
 In order to use a scoped `css/scss`, make sure that styling files include `.module.[css/scss]` part in the filename. This is the pattern matching that `create-react-app` uses internally to create a scoped classNames.
-See [existing components](https://github.com/dixahq/frontend-interview-project/blob/master/src/components) for samples.
+See [existing components](https://github.com/Dixa-public/frontend-interview-project/blob/master/src/components) for samples.
 
 ### Using CSS modules
 
