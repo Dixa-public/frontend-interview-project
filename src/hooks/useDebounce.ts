@@ -8,7 +8,6 @@ import { useState, useEffect } from 'react';
  * @param delay The wait time (in milliseconds) that if passed without any further
  *              changes, it will update the value.
  */
-
 const useDebounce = (value: string, delay: number): string => {
   const [debouncedValue, setDebouncedValue] = useState(value);
 
