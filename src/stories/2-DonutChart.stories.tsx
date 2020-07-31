@@ -31,6 +31,9 @@ export const regular: React.FC = () => (
   </div>
 );
 
+// Skip snapshot tests because on every render react-tooltip used internally by DonutChart
+// generates unique classnames that break the test.
+// Github issue: https://github.com/wwayne/react-tooltip/issues/595
 export default {
-  title: 'Chart',
+  title: 'Chart-SkipTest',
 };

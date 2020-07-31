@@ -7,10 +7,10 @@ import useOnClickOutside from '../../hooks/useOnClickOutside';
 import styles from './searchBox.module.scss';
 
 interface Props {
-  onChange: (value: string) => void;
+  className?: string;
   delay?: number;
-  className?: Optional<string>;
   isLoading?: boolean;
+  onChange: (value: string) => void;
 }
 
 const SearchBox: FC<Props> = (props) => {
@@ -33,13 +33,20 @@ const SearchBox: FC<Props> = (props) => {
     onChange(debouncedInputValue);
   }, [debouncedInputValue, onChange]);
 
+  const toggleSearchBox = (): void => {
+    if (inputValue === '') {
+      if (!isExpanded) {
+        inputRef.current?.focus();
+      }
+
+      setIsExpanded(!isExpanded);
+    }
+  };
+
   useOnClickOutside(
     containerRef,
     useCallback((): void => {
-      if (!isExpanded || inputValue !== '') {
-        return;
-      }
-      setIsExpanded(false);
+      toggleSearchBox();
     }, [isExpanded, inputValue]),
   );
 
@@ -48,7 +55,9 @@ const SearchBox: FC<Props> = (props) => {
   };
 
   const handleKeyDown = (e: React.KeyboardEvent<HTMLSpanElement>): void => {
-    console.log('keydown: ', e);
+    if (e.keyCode === 13) {
+      toggleSearchBox();
+    }
   };
 
   const handleClearIconClick = (): void => {
@@ -57,35 +66,13 @@ const SearchBox: FC<Props> = (props) => {
   };
 
   const handleSearchIconClick = (): void => {
-    if (!isExpanded) {
-      inputRef.current?.focus();
-    }
-
-    setIsExpanded(!isExpanded);
+    toggleSearchBox();
   };
 
   const rootClass = classnames(
     {
       [styles.SearchBox]: true,
-      //   [styles.background]: isBackground,
-      //   [styles.image]: imageTag !== null,
-      //   [styles.avatarSmallIcon]: isSmallIcon,
-    },
-    className,
-  );
-
-  const IconSearchClass = classnames(
-    {
-      [styles.IconSearch]: true,
-      [styles.IconSearchActive]: isExpanded,
-    },
-    className,
-  );
-
-  const InputClass = classnames(
-    {
-      [styles.Input]: true,
-      [styles.InputExpanded]: isExpanded,
+      [styles.SearchBoxExpanded]: isExpanded,
     },
     className,
   );
@@ -95,7 +82,7 @@ const SearchBox: FC<Props> = (props) => {
       <div className={styles.InputWrapper}>
         <input
           ref={inputRef}
-          className={InputClass}
+          className={styles.Input}
           type="text"
           value={inputValue}
           onChange={handleInputChange}
@@ -121,7 +108,7 @@ const SearchBox: FC<Props> = (props) => {
           </>
         ) : (
           <span
-            className={IconSearchClass}
+            className={styles.IconSearch}
             role="button"
             onClick={handleSearchIconClick}
             onKeyDown={handleKeyDown}

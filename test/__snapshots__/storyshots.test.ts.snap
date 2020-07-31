@@ -477,183 +477,82 @@ exports[`Storyshots Avatar With User 1`] = `
 </div>
 `;
 
-exports[`Storyshots Chart Regular 1`] = `
+exports[`Storyshots Search Box Regular 1`] = `
 <div>
   <div
     className=""
   >
-    <span>
-      10
-    </span>
-    <svg
-      height={72}
-      width={72}
-    >
-      <circle
-        cx={36}
-        cy={36}
-        fill="none"
-        r={30}
-        stroke="#FF9430"
-        strokeDasharray="19.86254575504611 168.63301346034146"
-        strokeDashoffset={47.12388980384689}
-        strokeWidth={12}
+    <div>
+      <input
+        onChange={[Function]}
+        type="text"
+        value=""
       />
-      <circle
-        cx={36}
-        cy={36}
-        fill="none"
-        r={30}
-        stroke="#46DB75"
-        strokeDasharray="79.45018302018444 109.04537619520313"
-        strokeDashoffset={27.261344048800783}
-        strokeWidth={12}
-      />
-      <circle
-        cx={36}
-        cy={36}
-        fill="none"
-        r={30}
-        stroke="#00A9FF"
-        strokeDasharray="31.581447750523317 156.91411146486425"
-        strokeDashoffset={-52.18883897138367}
-        strokeWidth={12}
-      />
-      <circle
-        cx={36}
-        cy={36}
-        fill="none"
-        r={30}
-        stroke="#D53341"
-        strokeDasharray="57.60138268963371 130.89417652575386"
-        strokeDashoffset={-83.770286721907}
-        strokeWidth={12}
-      />
-    </svg>
+    </div>
+    <div>
+      <span
+        onClick={[Function]}
+        onKeyDown={[Function]}
+        role="button"
+        tabIndex={-1}
+      >
+        <i
+          className="fa fa-search"
+        />
+      </span>
+    </div>
   </div>
+</div>
+`;
+
+exports[`Storyshots Search Box With Loading Indicator 1`] = `
+<div>
   <div
     className=""
+    fakeUsers={
+      Array [
+        Object {
+          "id": 1,
+          "name": "George",
+        },
+        Object {
+          "id": 2,
+          "name": "Mike",
+        },
+        Object {
+          "id": 3,
+          "name": "Gabriella",
+        },
+        Object {
+          "id": 4,
+          "name": "Dan",
+        },
+        Object {
+          "id": 5,
+          "name": "Christine",
+        },
+      ]
+    }
   >
-    <span>
-      1
-    </span>
-    <svg
-      height={72}
-      width={72}
-    >
-      <circle
-        cx={36}
-        cy={36}
-        fill="none"
-        r={30}
-        stroke="#FF9430"
-        strokeDasharray="3.7699111843077513 184.72564803107983"
-        strokeDashoffset={47.12388980384689}
-        strokeWidth={12}
+    <div>
+      <input
+        onChange={[Function]}
+        type="text"
+        value=""
       />
-      <circle
-        cx={36}
-        cy={36}
-        fill="none"
-        r={30}
-        stroke="#46DB75"
-        strokeDasharray="3.7699111843077513 184.72564803107983"
-        strokeDashoffset={43.35397861953914}
-        strokeWidth={12}
-      />
-      <circle
-        cx={36}
-        cy={36}
-        fill="none"
-        r={30}
-        stroke="#00A9FF"
-        strokeDasharray="105.55751316061705 82.93804605477052"
-        strokeDashoffset={39.58406743523139}
-        strokeWidth={12}
-      />
-      <circle
-        cx={36}
-        cy={36}
-        fill="none"
-        r={30}
-        stroke="#D53341"
-        strokeDasharray="75.39822368615503 113.09733552923254"
-        strokeDashoffset={-65.97344572538566}
-        strokeWidth={12}
-      />
-    </svg>
-  </div>
-  <div
-    className=""
-  >
-    <span>
-      345
-    </span>
-    <svg
-      height={72}
-      width={72}
-    >
-      <circle
-        cx={36}
-        cy={36}
-        fill="none"
-        r={30}
-        stroke="#FF9430"
-        strokeDasharray="94.24777960769379 94.24777960769379"
-        strokeDashoffset={47.12388980384689}
-        strokeWidth={12}
-      />
-      <circle
-        cx={36}
-        cy={36}
-        fill="none"
-        r={30}
-        stroke="#46DB75"
-        strokeDasharray="18.84955592153876 169.64600329384882"
-        strokeDashoffset={-47.12388980384689}
-        strokeWidth={12}
-      />
-      <circle
-        cx={36}
-        cy={36}
-        fill="none"
-        r={30}
-        stroke="#00A9FF"
-        strokeDasharray="56.548667764616276 131.9468914507713"
-        strokeDashoffset={-65.97344572538566}
-        strokeWidth={12}
-      />
-      <circle
-        cx={36}
-        cy={36}
-        fill="none"
-        r={30}
-        stroke="#D53341"
-        strokeDasharray="18.84955592153876 169.64600329384882"
-        strokeDashoffset={-122.52211349000191}
-        strokeWidth={12}
-      />
-    </svg>
-  </div>
-  <div
-    className="undefined"
-  >
-    <span>
-      0
-    </span>
-    <svg
-      height={72}
-      width={72}
-    >
-      <circle
-        cx={36}
-        cy={36}
-        fill="none"
-        r={30}
-        stroke="#dcdcdc"
-        strokeWidth={12}
-      />
-    </svg>
+    </div>
+    <div>
+      <span
+        onClick={[Function]}
+        onKeyDown={[Function]}
+        role="button"
+        tabIndex={-1}
+      >
+        <i
+          className="fa fa-search"
+        />
+      </span>
+    </div>
   </div>
 </div>
 `;

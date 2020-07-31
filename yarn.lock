@@ -1557,6 +1557,17 @@
     prop-types "^15.6.1"
     react-lifecycles-compat "^3.0.4"
 
+"@sambego/storybook-state@^2.0.1":
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/@sambego/storybook-state/-/storybook-state-2.0.1.tgz#862096913e708cbdeae32b0d2256fc59c254699b"
+  integrity sha512-pkD6IAMb+aB5Ow9toQDHOWZVnd0RAgsJekPfUL92UxCcx8EYM3J9xu6aPvmJbJJXc2bYcwv/z6l36Ej9cV7UJw==
+  dependencies:
+    "@storybook/addons" "^5.3.3"
+    "@storybook/api" "^5.3.3"
+    "@storybook/components" "^5.3.3"
+    "@storybook/react" "^5.3.3"
+    uuid "^3.1.0"
+
 "@sheerun/mutationobserver-shim@^0.3.2":
   version "0.3.3"
   resolved "https://registry.yarnpkg.com/@sheerun/mutationobserver-shim/-/mutationobserver-shim-0.3.3.tgz#5405ee8e444ed212db44e79351f0c70a582aae25"
@@ -1643,7 +1654,7 @@
     regenerator-runtime "^0.13.3"
     ts-dedent "^1.1.0"
 
-"@storybook/addons@5.3.19", "@storybook/addons@^5.3.19":
+"@storybook/addons@5.3.19", "@storybook/addons@^5.3.19", "@storybook/addons@^5.3.3":
   version "5.3.19"
   resolved "https://registry.yarnpkg.com/@storybook/addons/-/addons-5.3.19.tgz#3a7010697afd6df9a41b8c8a7351d9a06ff490a4"
   integrity sha512-Ky/k22p6i6FVNvs1VhuFyGvYJdcp+FgXqFgnPyY/OXJW/vPDapdElpTpHJZLFI9I2FQBDcygBPU5RXkumQ+KUQ==
@@ -1656,7 +1667,7 @@
     global "^4.3.2"
     util-deprecate "^1.0.2"
 
-"@storybook/api@5.3.19":
+"@storybook/api@5.3.19", "@storybook/api@^5.3.3":
   version "5.3.19"
   resolved "https://registry.yarnpkg.com/@storybook/api/-/api-5.3.19.tgz#77f15e9e2eee59fe1ddeaba1ef39bc34713a6297"
   integrity sha512-U/VzDvhNCPmw2igvJYNNM+uwJCL+3teiL6JmuoL4/cmcqhI6IqqG9dZmMP1egoCd19wXEP7rnAfB/VcYVg41dQ==
@@ -1730,7 +1741,7 @@
   dependencies:
     core-js "^3.0.1"
 
-"@storybook/components@5.3.19":
+"@storybook/components@5.3.19", "@storybook/components@^5.3.3":
   version "5.3.19"
   resolved "https://registry.yarnpkg.com/@storybook/components/-/components-5.3.19.tgz#aac1f9eea1247cc85bd93b10fca803876fb84a6b"
   integrity sha512-3g23/+ktlocaHLJKISu9Neu3XKa6aYP2ctDYkRtGchSB0Q55hQsUVGO+BEVuT7Pk2D59mVCxboBjxcRoPUY4pw==
@@ -1877,7 +1888,7 @@
   resolved "https://registry.yarnpkg.com/@storybook/preset-typescript/-/preset-typescript-1.2.2.tgz#79bad0623a0917182236e721a1b2517eb9b97886"
   integrity sha512-CwAg6motnLJKkPZ0mrLS9/fI9uJHtAN4BqAgarfnXf3vh9UzUOyPRbo1hMT5zcMLPa0mo3tHPWGK6mt6lqc7lQ==
 
-"@storybook/react@^5.3.19":
+"@storybook/react@^5.3.19", "@storybook/react@^5.3.3":
   version "5.3.19"
   resolved "https://registry.yarnpkg.com/@storybook/react/-/react-5.3.19.tgz#ad7e7a5538399e2794cdb5a1b844a2b77c10bd09"
   integrity sha512-OBRUqol3YLQi/qE55x2pWkv4YpaAmmfj6/Km+7agx+og+oNQl0nnlXy7r27X/4j3ERczzURa5pJHtSjwiNaJNw==
