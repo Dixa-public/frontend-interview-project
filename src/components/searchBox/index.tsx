@@ -79,44 +79,46 @@ const SearchBox: FC<Props> = (props) => {
 
   return (
     <div ref={containerRef} className={rootClass} {...otherProps}>
-      <div className={styles.InputWrapper}>
-        <input
-          ref={inputRef}
-          className={styles.Input}
-          type="text"
-          value={inputValue}
-          onChange={handleInputChange}
-        />
-      </div>
+      <div className={styles.Content}>
+        <div className={styles.InputWrapper}>
+          <input
+            ref={inputRef}
+            className={styles.Input}
+            type="text"
+            value={inputValue}
+            onChange={handleInputChange}
+          />
+        </div>
 
-      <div className={styles.IconWrapper}>
-        {inputValue !== '' ? (
-          <>
-            {isLoading ? (
-              <Spinner size={20} color="white" />
-            ) : (
-              <span
-                className={styles.IconClear}
-                role="button"
-                onClick={handleClearIconClick}
-                onKeyDown={handleKeyDown}
-                tabIndex={-1}
-              >
-                <Icon name="times" className={styles.icon} />
-              </span>
-            )}
-          </>
-        ) : (
-          <span
-            className={styles.IconSearch}
-            role="button"
-            onClick={handleSearchIconClick}
-            onKeyDown={handleKeyDown}
-            tabIndex={-1}
-          >
-            <Icon name="fa-search" className={styles.icon} />
-          </span>
-        )}
+        <div className={styles.IconWrapper}>
+          {inputValue !== '' ? (
+            <>
+              {isLoading ? (
+                <Spinner size={20} color="white" />
+              ) : (
+                <span
+                  className={styles.IconClear}
+                  role="button"
+                  onClick={handleClearIconClick}
+                  onKeyDown={handleKeyDown}
+                  tabIndex={-1}
+                >
+                  <Icon name="times" className={styles.icon} />
+                </span>
+              )}
+            </>
+          ) : (
+            <span
+              className={styles.IconSearch}
+              role="button"
+              onClick={handleSearchIconClick}
+              onKeyDown={handleKeyDown}
+              tabIndex={-1}
+            >
+              <Icon name="fa-search" className={styles.icon} />
+            </span>
+          )}
+        </div>
       </div>
     </div>
   );

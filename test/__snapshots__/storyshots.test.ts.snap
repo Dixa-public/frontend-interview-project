@@ -478,80 +478,72 @@ exports[`Storyshots Avatar With User 1`] = `
 `;
 
 exports[`Storyshots Search Box Regular 1`] = `
-<div>
+<div
+  style={
+    Object {
+      "width": "200px",
+    }
+  }
+>
   <div
     className=""
   >
     <div>
-      <input
-        onChange={[Function]}
-        type="text"
-        value=""
-      />
-    </div>
-    <div>
-      <span
-        onClick={[Function]}
-        onKeyDown={[Function]}
-        role="button"
-        tabIndex={-1}
-      >
-        <i
-          className="fa fa-search"
+      <div>
+        <input
+          onChange={[Function]}
+          type="text"
+          value=""
         />
-      </span>
+      </div>
+      <div>
+        <span
+          onClick={[Function]}
+          onKeyDown={[Function]}
+          role="button"
+          tabIndex={-1}
+        >
+          <i
+            className="fa fa-search"
+          />
+        </span>
+      </div>
     </div>
   </div>
 </div>
 `;
 
 exports[`Storyshots Search Box With Loading Indicator 1`] = `
-<div>
+<div
+  style={
+    Object {
+      "width": "200px",
+    }
+  }
+>
   <div
     className=""
-    fakeUsers={
-      Array [
-        Object {
-          "id": 1,
-          "name": "George",
-        },
-        Object {
-          "id": 2,
-          "name": "Mike",
-        },
-        Object {
-          "id": 3,
-          "name": "Gabriella",
-        },
-        Object {
-          "id": 4,
-          "name": "Dan",
-        },
-        Object {
-          "id": 5,
-          "name": "Christine",
-        },
-      ]
-    }
   >
     <div>
-      <input
-        onChange={[Function]}
-        type="text"
-        value=""
-      />
-    </div>
-    <div>
-      <span
-        onClick={[Function]}
-        onKeyDown={[Function]}
-        role="button"
-        tabIndex={-1}
-      >
-        <i
-          className="fa fa-search"
+      <div>
+        <input
+          onChange={[Function]}
+          type="text"
+          value=""
         />
-      </span>
+      </div>
+      <div>
+        <span
+          onClick={[Function]}
+          onKeyDown={[Function]}
+          role="button"
+          tabIndex={-1}
+        >
+          <i
+            className="fa fa-search"
+          />
+        </span>
+      </div>
     </div>
   </div>
 </div>

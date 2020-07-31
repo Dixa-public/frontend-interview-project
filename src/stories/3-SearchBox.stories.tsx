@@ -6,17 +6,10 @@ import SearchBox from '../components/searchBox';
 
 const store = new Store({
   isLoading: false,
-  fakeUsers: [
-    { id: 1, name: 'George' },
-    { id: 2, name: 'Mike' },
-    { id: 3, name: 'Gabriella' },
-    { id: 4, name: 'Dan' },
-    { id: 5, name: 'Christine' },
-  ],
 });
 
 export const Regular: React.FC = () => (
-  <div>
+  <div style={{ width: `${number('width (px)', 200)}px` }}>
     <SearchBox
       delay={number('Debounce delay (milliseconds)', 500)}
       onChange={action('Searching for')}
@@ -35,7 +28,7 @@ export const WithLoadingIndicator: React.FC = () => {
   };
 
   return (
-    <div>
+    <div style={{ width: `${number('width (px)', 200)}px` }}>
       <State store={store}>
         <SearchBox
           isLoading={store.get('isLoading')}
