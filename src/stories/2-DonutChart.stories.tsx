@@ -4,7 +4,6 @@ import DonutChart from '../components/donut-chart';
 export const regular: React.FC = () => (
   <div>
     <DonutChart
-      count="10"
       data={[
         { value: 100, color: '#FF9430' },
         { value: 400, color: '#46DB75' },
@@ -13,7 +12,6 @@ export const regular: React.FC = () => (
       ]}
     />
     <DonutChart
-      count="1"
       data={[
         { value: 2, color: '#FF9430' },
         { value: 2, color: '#46DB75' },
@@ -22,7 +20,6 @@ export const regular: React.FC = () => (
       ]}
     />
     <DonutChart
-      count="345"
       data={[
         { value: 50, color: '#FF9430' },
         { value: 10, color: '#46DB75' },
@@ -30,7 +27,7 @@ export const regular: React.FC = () => (
         { value: 10, color: '#D53341' },
       ]}
     />
-    <DonutChart count="0" data={[]} />
+    <DonutChart data={[]} />
   </div>
 );
 

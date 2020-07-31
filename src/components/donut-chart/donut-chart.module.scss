@@ -24,3 +24,13 @@
     color: $grey-6;
   }
 }
+
+circle {
+  transition: opacity 150ms ease-in;
+
+  &:hover {
+    opacity: 0.6;
+  }
+}
+
+

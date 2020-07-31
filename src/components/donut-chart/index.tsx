@@ -1,5 +1,6 @@
 import React, { FC } from 'react';
 import classnames from 'classnames';
+import ReactTooltip from 'react-tooltip';
 import styles from './donut-chart.module.scss';
 
 interface ChartData {
@@ -14,7 +15,6 @@ interface SvgData {
 
 interface Props {
   className?: Optional<string>;
-  count: string;
   data: Array<ChartData>;
 }
 
@@ -46,19 +46,23 @@ function getSlicesAsPercentages(data: Array<ChartData>): Array<SvgData> {
 }
 
 const DonutChart: FC<Props> = (props) => {
-  const { className, data, count, ...otherProps } = props;
-
-  const rootClass = classnames(
-    {
-      [styles.root]: true,
-      [styles.rootNoWaiting]: count === '0',
-    },
-    className,
-  );
+  const { className, data, ...otherProps } = props;
 
   let total = 0;
 
   const slices = getSlicesAsPercentages(data);
+
+  const count = data.reduce((acc: number, slice: ChartData) => {
+    return acc + slice.value;
+  }, 0);
+
+  const rootClass = classnames(
+    {
+      [styles.root]: true,
+      [styles.rootNoWaiting]: count === 0,
+    },
+    className,
+  );
 
   return (
     <div {...otherProps} className={rootClass}>
@@ -70,6 +74,7 @@ const DonutChart: FC<Props> = (props) => {
 
           return (
             <circle
+              data-tip={slice.pct.toFixed(0)}
               key={offset}
               r={RADIUS}
               fill="none"
@@ -93,6 +98,7 @@ const DonutChart: FC<Props> = (props) => {
           />
         )}
       </svg>
+      <ReactTooltip />
     </div>
   );
 };
