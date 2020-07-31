@@ -31,14 +31,12 @@
   box-shadow: inset 0px 0px 0px 0px rgba(0, 0, 0, 0);
   font-size: 18px;
 
-  opacity: 0.1;
-  transform: translateX(100%);
-  transition: all 400ms ease;
+  opacity: 0;
+  transition: all 300ms ease;
 }
 
 .InputExpanded {
   opacity: 1;
-  transform: translateX(0px);
 }
 
 .IconWrapper {
