@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
 import classnames from 'classnames';
-import Icon from '../icon';
-import Image from '../image';
+import Icon from './icon';
+import Image from './image';
 import styles from './avatar.module.scss';
 
 interface Props {
