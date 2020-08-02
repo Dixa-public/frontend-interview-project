@@ -13,112 +13,141 @@ interface Props {
   onChange: (value: string) => void;
 }
 
+interface State {
+  inputValue: string;
+  isExpanded: boolean;
+}
+
+const initialState: State = {
+  inputValue: '',
+  isExpanded: false,
+};
+
 const SearchBox: FC<Props> = (props) => {
   const { onChange, delay = 500, className, isLoading, ...otherProps } = props;
 
-  const [inputValue, setInputValue] = useState('');
-  const debouncedInputValue = useDebounce(inputValue, delay);
-
-  const [isExpanded, setIsExpanded] = useState<boolean>(false);
-
+  const [state, setState] = useState<State>(initialState);
+  const debouncedInputValue = useDebounce(state.inputValue, delay);
   const inputRef = useRef<HTMLInputElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
 
   /**
-   * The debouncedInputValue will be only updated after the inputValue has not
+   * The debouncedInputValue will only be updated after the inputValue hasn't
    * be changed for X milliseconds. Therefore, the parent component will only
-   * get a new onChange event every X milliseconds.
+   * receive a new onChange event every X milliseconds.
    */
   useEffect(() => {
     onChange(debouncedInputValue);
   }, [debouncedInputValue, onChange]);
 
-  const toggleSearchBox = (): void => {
-    if (inputValue === '') {
-      if (!isExpanded) {
+  /**
+   * Expands and focuses on a "closed" SearchBox or
+   * closes an expanded one if it holds no value.
+   */
+  const toggleSearchBox = (toggleState: boolean): void => {
+    if (state.inputValue === '') {
+      if (toggleState === true) {
         inputRef.current?.focus();
       }
 
-      setIsExpanded(!isExpanded);
+      setState((prevState) => ({
+        ...prevState,
+        isExpanded: toggleState,
+      }));
     }
   };
 
+  /**
+   * Listens to clicks outside the SearchBox components
+   * and toggles its "expand" state.
+   */
   useOnClickOutside(
     containerRef,
     useCallback((): void => {
-      toggleSearchBox();
-    }, [isExpanded, inputValue]),
+      toggleSearchBox(false);
+    }, [state.isExpanded, state.inputValue]),
   );
 
+  /**
+   * HANDLERS for DOM user actions
+   */
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>): void => {
-    setInputValue(e.target.value);
+    const { value } = e.target;
+    setState((prevState) => ({ ...prevState, inputValue: value }));
   };
 
   const handleKeyDown = (e: React.KeyboardEvent<HTMLSpanElement>): void => {
     if (e.keyCode === 13) {
-      toggleSearchBox();
+      toggleSearchBox(!state.isExpanded);
     }
   };
 
   const handleClearIconClick = (): void => {
-    setInputValue('');
+    setState((prevState) => ({
+      ...prevState,
+      inputValue: '',
+    }));
     inputRef.current?.focus();
   };
 
   const handleSearchIconClick = (): void => {
-    toggleSearchBox();
+    toggleSearchBox(!state.isExpanded);
   };
 
   const rootClass = classnames(
     {
       [styles.SearchBox]: true,
-      [styles.SearchBoxExpanded]: isExpanded,
+      [styles.SearchBoxExpanded]: state.isExpanded,
     },
     className,
   );
 
+  const renderedInput = (
+    <input
+      ref={inputRef}
+      className={styles.Input}
+      type="text"
+      value={state.inputValue}
+      onChange={handleInputChange}
+    />
+  );
+
+  let renderedIcon = null;
+  if (state.inputValue !== '') {
+    if (isLoading) {
+      renderedIcon = <Spinner size={20} color="white" />;
+    } else {
+      renderedIcon = (
+        <span
+          className={styles.IconClear}
+          role="button"
+          onClick={handleClearIconClick}
+          onKeyDown={handleKeyDown}
+          tabIndex={-1}
+        >
+          <Icon name="times" />
+        </span>
+      );
+    }
+  } else {
+    renderedIcon = (
+      <span
+        className={styles.IconSearch}
+        role="button"
+        onClick={handleSearchIconClick}
+        onKeyDown={handleKeyDown}
+        tabIndex={-1}
+      >
+        <Icon name="fa-search" />
+      </span>
+    );
+  }
+
   return (
     <div ref={containerRef} className={rootClass} {...otherProps}>
       <div className={styles.Content}>
-        <div className={styles.InputWrapper}>
-          <input
-            ref={inputRef}
-            className={styles.Input}
-            type="text"
-            value={inputValue}
-            onChange={handleInputChange}
-          />
-        </div>
-
-        <div className={styles.IconWrapper}>
-          {inputValue !== '' ? (
-            <>
-              {isLoading ? (
-                <Spinner size={20} color="white" />
-              ) : (
-                <span
-                  className={styles.IconClear}
-                  role="button"
-                  onClick={handleClearIconClick}
-                  onKeyDown={handleKeyDown}
-                  tabIndex={-1}
-                >
-                  <Icon name="times" className={styles.icon} />
-                </span>
-              )}
-            </>
-          ) : (
-            <span
-              className={styles.IconSearch}
-              role="button"
-              onClick={handleSearchIconClick}
-              onKeyDown={handleKeyDown}
-              tabIndex={-1}
-            >
-              <Icon name="fa-search" className={styles.icon} />
-            </span>
-          )}
-        </div>
+        <div className={styles.InputWrapper}>{renderedInput}</div>
+        <div className={styles.IconWrapper}>{renderedIcon}</div>
       </div>
     </div>
   );
