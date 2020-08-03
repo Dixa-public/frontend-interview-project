@@ -28,39 +28,61 @@ export const withGradientSeed: React.FC = () => (
 export const withIcon: React.FC = () => (
   <div>
     <div style={{ width: '45px' }}>
-      <Avatar iconKey="paper-plane" color="#5644D8" />
+      <Avatar iconKey="paper-plane" color={color('Background(1)', '#5644D8')} />
     </div>
     <br />
     <div style={{ width: '45px' }}>
-      <Avatar iconKey="clock" color={color('Background', '#7BC4A9')} />
+      <Avatar iconKey="clock" color={color('Background(2)', '#7BC4A9')} />
     </div>
     <br />
     <div style={{ width: '45px' }}>
-      <Avatar isSolid iconKey="salesforce" color="#18a8d8" />
+      <Avatar
+        isSolid
+        iconKey="salesforce"
+        color={color('Background(3)', '#18a8d8')}
+      />
     </div>
     <br />
     <div style={{ width: '45px' }}>
-      <Avatar isSolid iconKey="magento" color="#c14800" />
+      <Avatar
+        isSolid
+        iconKey="magento"
+        color={color('Background(4)', '#c14800')}
+      />
     </div>
     <br />
     <div style={{ width: '32px' }}>
-      <Avatar isSmallIcon iconKey="paper-plane" color="#5644D8" />
+      <Avatar
+        isSmallIcon
+        iconKey="paper-plane"
+        color={color('Background(1)', '#5644D')}
+      />
     </div>
     <br />
     <div style={{ width: '32px' }}>
       <Avatar
         isSmallIcon
         iconKey="clock"
-        color={color('Background', '#7BC4A9')}
+        color={color('Background(2)', '#7BC4A9')}
       />
     </div>
     <br />
     <div style={{ width: '32px' }}>
-      <Avatar isSolid isSmallIcon iconKey="salesforce" color="#18a8d8" />
+      <Avatar
+        isSolid
+        isSmallIcon
+        iconKey="salesforce"
+        color={color('Background(3)', '#18a8d8')}
+      />
     </div>
     <br />
     <div style={{ width: '32px' }}>
-      <Avatar isSolid isSmallIcon iconKey="magento" color="#c14800" />
+      <Avatar
+        isSolid
+        isSmallIcon
+        iconKey="magento"
+        color={color('Background(4)', '#c14800')}
+      />
     </div>
   </div>
 );
