@@ -6,7 +6,7 @@ import styles from './avatar.module.scss';
 
 interface Props {
   user?: Optional<User>;
-  className?: Optional<string>;
+  className?: string;
   color?: string;
   gradientSeed?: string;
   imageSrc?: string;
@@ -121,7 +121,7 @@ const Avatar: FC<Props> = (props) => {
   let printIcon = null;
 
   if (imageSrc) {
-    imageTag = <Image className={styles.image} src={imageSrc} />;
+    imageTag = <Image className={styles.image} src={imageSrc} alt="" />;
   } else if (color) {
     styleOverrides.backgroundColor = color;
     isBackground = true;

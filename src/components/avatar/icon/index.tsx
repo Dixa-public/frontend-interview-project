@@ -3,7 +3,7 @@ import classnames from 'classnames';
 import '@fortawesome/fontawesome-free/css/all.css';
 
 interface Props {
-  className?: Optional<string>;
+  className: string;
   name: string;
   isSolid?: boolean;
 }

@@ -3,9 +3,9 @@ import classnames from 'classnames';
 import styles from './image.module.scss';
 
 interface Props {
-  src: Src;
-  className?: string;
-  alt?: string;
+  src: string;
+  className: string;
+  alt: string;
 }
 
 interface State {
