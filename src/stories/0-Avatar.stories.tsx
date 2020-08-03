@@ -7,6 +7,7 @@ export default {
   decorators: [withKnobs],
 };
 
+// Avatar story with gradient seed visuals
 export const withGradientSeed: React.FC = () => (
   <div>
     <div style={{ width: '45px' }}>
@@ -25,6 +26,7 @@ export const withGradientSeed: React.FC = () => (
   </div>
 );
 
+// Avatar story with icons
 export const withIcon: React.FC = () => (
   <div>
     <div style={{ width: '45px' }}>
@@ -87,6 +89,7 @@ export const withIcon: React.FC = () => (
   </div>
 );
 
+// Avatar story with profile images
 export const withImage: React.FC = () => (
   <div>
     <div style={{ width: '45px' }}>
@@ -99,6 +102,7 @@ export const withImage: React.FC = () => (
   </div>
 );
 
+// Avatar story with user avatars or initials
 export const withUser: React.FC = () => (
   <div>
     <div style={{ width: '45px' }}>
@@ -127,9 +131,10 @@ export const withUser: React.FC = () => (
   </div>
 );
 
+// Avatar story with initials guide
 export const withInitials: React.FC = () => (
   <div>
-    <small>User one name John - should print &quot;J&quot;.</small>
+    <small>User with one name John - should print &quot;J&quot;.</small>
     <div style={{ width: '45px' }}>
       <Avatar
         user={{
