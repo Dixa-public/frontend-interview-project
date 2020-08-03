@@ -44,29 +44,27 @@ const SearchBox: FC<Props> = (props) => {
    * Expands and focuses on a "closed" SearchBox or
    * closes an expanded one if it holds no value.
    */
-  const toggleSearchBox = (toggleState: boolean): void => {
-    if (state.inputValue === '') {
-      if (toggleState === true) {
-        inputRef.current?.focus();
-      }
+  const toggleSearchBox = useCallback(
+    (toggleState: boolean): void => {
+      if (state.inputValue === '') {
+        if (toggleState === true) {
+          inputRef.current?.focus();
+        }
 
-      setState((prevState) => ({
-        ...prevState,
-        isExpanded: toggleState,
-      }));
-    }
-  };
+        setState((prevState) => ({
+          ...prevState,
+          isExpanded: toggleState,
+        }));
+      }
+    },
+    [state.inputValue],
+  );
 
   /**
    * Listens to clicks outside the SearchBox components
    * and toggles its "expand" state.
    */
-  useOnClickOutside(
-    containerRef,
-    useCallback((): void => {
-      toggleSearchBox(false);
-    }, [state.isExpanded, state.inputValue]),
-  );
+  useOnClickOutside(containerRef, () => toggleSearchBox(false));
 
   /**
    * HANDLERS for DOM user actions
