@@ -14,7 +14,7 @@ const Icon: React.FC<Props> = (props) => {
   const rootClass = classnames(
     {
       fa: !isSolid,
-      fas: isSolid,
+      fab: isSolid,
       [`fa-${name.replace('fa-', '')}`]: true,
     },
     className,
