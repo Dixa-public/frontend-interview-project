@@ -6,8 +6,8 @@ type User = {
   id: string;
   name?: string;
   avatarUrl?: Optional<string>;
-  roles?: Array<string>;
+  //roles?: Array<string>; not used
   phoneNumber?: Optional<string>;
-  displayName?: Optional<string>;
+  //displayName?: Optional<string>; not used
   email?: Optional<string>;
 };

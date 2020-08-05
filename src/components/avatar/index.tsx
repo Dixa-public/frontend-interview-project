@@ -139,11 +139,12 @@ const Avatar: FC<Props> = (props) => {
 
   // `unknown type` - https://mariusschulz.com/blog/the-unknown-type-in-typescript
   const styleOverrides: Record<string, unknown> = {};
-  let initials = '';
+  let label = '';
   let imageTag = null;
   let isBackground = false;
   let printIcon = null;
 
+  // setting backgrounds of avatar based on different props
   if (gradientSeed) {
     styleOverrides.background = generateGradient(gradientSeed);
     isBackground = true;
@@ -167,19 +168,18 @@ const Avatar: FC<Props> = (props) => {
     isBackground = true;
   }
 
+  // setting label of avatar based on different props
   if (userInitials) {
-    initials = userInitials;
+    label = userInitials;
   } else if (user && !user.avatarUrl) {
-    console.log(user.displayName);
-    const seed = user.name || user.displayName || user.email || user.phoneNumber || null;
-    if (seed === null) {
-      console.log(seed);
+    const seed = user.name || user.email || user.phoneNumber || user.id;
+    if (seed === user.id) {
       // Anonymous user.
       printIcon = <Icon name="user-secret" className={styles.icon} />;
       styleOverrides.background = '#CACACA';
       isBackground = true;
     } else {
-      initials = generateInitials(seed);
+      label = generateInitials(seed);
     }
   }
 
@@ -196,7 +196,7 @@ const Avatar: FC<Props> = (props) => {
   return (
     <div {...otherProps} className={rootClass} style={styleOverrides}>
       {imageTag}
-      {!!initials && <span className={styles.text}>{initials}</span>}
+      {!!label && <span className={styles.label}>{label}</span>}
       {!!iconKey && <Icon name={iconKey} isSolid={isSolid} className={styles.icon} />}
       {printIcon}
     </div>
