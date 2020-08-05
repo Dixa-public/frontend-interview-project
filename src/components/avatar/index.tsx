@@ -10,91 +10,115 @@ interface Props {
   color?: string;
   gradientSeed?: string;
   imageSrc?: string;
-  text?: string;
+  userInitials?: string;
   iconKey?: string;
   isSolid?: boolean;
   isSmallIcon?: boolean;
 }
+// what does p, q, t, parameters stands for? I would suggest writing whole words
+const hue2rgb = function(p: number, q: number, t: number): number {
+  //again what is newT?
+  let newT = t;
+  if (newT < 0) newT += 1;
+  if (newT > 1) newT -= 1;
+  /* I could add a more informative name for the following calculations, 
+         if I would know what what the above mentioned variables stand for */
+  const calc1 = p + (q - p) * 6 * newT;
+  const calc2 = p + (q - p) * (2 / 3 - newT) * 6;
+  if (newT < 1 / 6) return calc1;
+  if (newT < 1 / 2) return q;
+  if (newT < 2 / 3) return calc2;
+  return p;
+};
 
-function hslToRgb(h: number, s: number, l: number): Array<number> {
-  let r;
-  let g;
-  let b;
+function hslToRgb(hue: number, saturation: number, ligthness: number): Array<number> {
+  let red;
+  let green;
+  let blue;
 
-  if (s === 0) {
-    r = l;
-    g = l;
-    b = l;
+  if (saturation === 0) {
+    red = ligthness;
+    green = ligthness;
+    blue = ligthness;
   } else {
-    const hue2rgb = function hue2rgb(p: number, q: number, t: number): number {
-      let newT = t;
-      if (newT < 0) newT += 1;
-      if (newT > 1) newT -= 1;
-      if (newT < 1 / 6) return p + (q - p) * 6 * newT;
-      if (newT < 1 / 2) return q;
-      if (newT < 2 / 3) return p + (q - p) * (2 / 3 - newT) * 6;
-      return p;
-    };
+    const calcQ1 = ligthness * (1 + saturation);
+    const calcQ2 = ligthness + saturation - ligthness * saturation;
+    const q = ligthness < 0.5 ? calcQ1 : calcQ2;
+    const p = 2 * ligthness - q;
+    const calcHue1 = hue + 1 / 3;
+    const calcHue2 = hue - 1 / 3;
 
-    const q = l < 0.5 ? l * (1 + s) : l + s - l * s;
-    const p = 2 * l - q;
-    r = hue2rgb(p, q, h + 1 / 3);
-    g = hue2rgb(p, q, h);
-    b = hue2rgb(p, q, h - 1 / 3);
+    red = hue2rgb(p, q, calcHue1);
+    green = hue2rgb(p, q, hue);
+    blue = hue2rgb(p, q, calcHue2);
   }
 
-  return [Math.round(r * 255), Math.round(g * 255), Math.round(b * 255)];
+  const roundedRed = Math.round(red * 255);
+  const roundedGreen = Math.round(green * 255);
+  const roundedBlue = Math.round(blue * 255);
+
+  return [roundedRed, roundedGreen, roundedBlue];
 }
 
-function generateInitials(text = ''): string {
-  if (text.indexOf(' ') > -1) {
-    // name.
-    return text
+function generateInitials(userInfo = ''): string {
+  if (userInfo.indexOf(' ') > -1) {
+    // from full name.
+    const fullnameInitials = userInfo
       .split(' ')
       .map((name: string) => name[0])
       .slice(0, 2)
       .join('');
+    return fullnameInitials;
   }
-  if (text.indexOf('@') > -1) {
-    // Email.
-    return text
+  if (userInfo.indexOf('@') > -1) {
+    // from Email.
+    const emailInitials = userInfo
       .split('@')
       .map((name: string) => name[0])
       .slice(0, 2)
       .join('');
+    return emailInitials;
   }
-  if (text.indexOf('+') > -1) {
-    // Phone number e.164 format.
-    return text.slice(-2);
-  }
-  return text.charAt(0);
+  if (userInfo.indexOf('+') > -1) {
+    // from Phone number e.164 format.
+    const phonenrIntials = userInfo.slice(-2);
+    return phonenrIntials;
+  } // from one name
+  const nameInitials = userInfo.charAt(0);
+  return nameInitials;
 }
 
-function generateIdGradient(id: string): string {
+function generateGradient(id: string): string {
   let hue = 0;
-  let s1 = 65;
-  let s2 = 65;
-  const l1 = 56;
-  let l2 = 80;
+  let saturation1 = 65;
+  let saturation2 = 65;
+  const lightness1 = 56;
+  let lightness2 = 80;
   let gap = 25;
   let angle = 50;
+
   for (let i = 0; i < id.length; i += 1) {
     hue += id.charCodeAt(i);
   }
-  if (hue % 3 === 0 && hue % 360 > 40 && hue % 360 < 320) {
+  function hueCheck() {
+    return hue % 3 === 0 && hue % 360 > 40 && hue % 360 < 320;
+  }
+  if (hueCheck()) {
     gap = 115 + (hue % 10);
-    l2 = 80;
+    lightness2 = 80;
   } else {
     gap += hue % 20;
   }
   angle += hue % 360;
   angle = 45 + Math.floor(angle / 90) * 90;
-  s1 += hue % 15;
-  s2 += hue % 15;
+  saturation1 += hue % 15;
+  saturation2 += hue % 15;
   hue %= 360;
 
-  const color1 = hslToRgb(hue / 360, s1 / 100, l1 / 100);
-  const color2 = hslToRgb(((hue + gap) % 360) / 360, s2 / 100, l2 / 100);
+  const hueCalc2 = ((hue + gap) % 360) / 360;
+
+  const color1 = hslToRgb(hue / 360, saturation1 / 100, lightness1 / 100);
+  const color2 = hslToRgb(hueCalc2, saturation2 / 100, lightness2 / 100);
 
   return `linear-gradient(${angle}deg, rgb(${color1[0]},${color1[1]},${color1[2]}) 0%, rgb(${color2[0]},${color2[1]},${color2[2]}) 100%)`;
 }
@@ -107,7 +131,7 @@ const Avatar: FC<Props> = (props) => {
     gradientSeed,
     imageSrc,
     iconKey,
-    text,
+    userInitials,
     isSolid,
     isSmallIcon,
     ...otherProps
@@ -120,27 +144,19 @@ const Avatar: FC<Props> = (props) => {
   let isBackground = false;
   let printIcon = null;
 
-  if (imageSrc) {
-    imageTag = <Image className={styles.image} src={imageSrc} alt="" />;
+  if (gradientSeed) {
+    styleOverrides.background = generateGradient(gradientSeed);
+    isBackground = true;
   } else if (color) {
     styleOverrides.backgroundColor = color;
     isBackground = true;
-  } else if (gradientSeed) {
-    styleOverrides.background = generateIdGradient(gradientSeed);
+  } else if (imageSrc) {
+    imageTag = <Image className={styles.image} src={imageSrc} alt="" />;
+  } else if (user && user.avatarUrl) {
+    imageTag = <Image className={styles.image} src={user.avatarUrl} alt={user.name || ''} />;
+  } else if (user && !user.avatarUrl) {
+    styleOverrides.background = generateGradient(user.id);
     isBackground = true;
-  } else if (user) {
-    if (user.avatarUrl) {
-      imageTag = (
-        <Image
-          className={styles.image}
-          src={user.avatarUrl}
-          alt={user.name || ''}
-        />
-      );
-    } else {
-      styleOverrides.background = generateIdGradient(user.id);
-      isBackground = true;
-    }
   } else if (user === null) {
     // Unassigned
     printIcon = <Icon name="user-slash" className={styles.icon} />;
@@ -149,6 +165,22 @@ const Avatar: FC<Props> = (props) => {
   } else {
     styleOverrides.background = '#CACACA';
     isBackground = true;
+  }
+
+  if (userInitials) {
+    initials = userInitials;
+  } else if (user && !user.avatarUrl) {
+    console.log(user.displayName);
+    const seed = user.name || user.displayName || user.email || user.phoneNumber || null;
+    if (seed === null) {
+      console.log(seed);
+      // Anonymous user.
+      printIcon = <Icon name="user-secret" className={styles.icon} />;
+      styleOverrides.background = '#CACACA';
+      isBackground = true;
+    } else {
+      initials = generateInitials(seed);
+    }
   }
 
   const rootClass = classnames(
@@ -161,28 +193,11 @@ const Avatar: FC<Props> = (props) => {
     className,
   );
 
-  if (text) {
-    initials = text;
-  } else if (user && !user.avatarUrl) {
-    const seed =
-      user.name || user.displayName || user.email || user.phoneNumber || null;
-    if (seed === null || seed === 'anonymous') {
-      // Anonymous user.
-      printIcon = <Icon name="user-secret" className={styles.icon} />;
-      styleOverrides.background = '#CACACA';
-      isBackground = true;
-    } else {
-      initials = generateInitials(seed);
-    }
-  }
-
   return (
     <div {...otherProps} className={rootClass} style={styleOverrides}>
       {imageTag}
       {!!initials && <span className={styles.text}>{initials}</span>}
-      {!!iconKey && (
-        <Icon name={iconKey} isSolid={isSolid} className={styles.icon} />
-      )}
+      {!!iconKey && <Icon name={iconKey} isSolid={isSolid} className={styles.icon} />}
       {printIcon}
     </div>
   );

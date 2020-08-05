@@ -7,19 +7,19 @@ export default {
   decorators: [withKnobs],
 };
 
-// Avatar story with gradient seed visuals
+// Avatar story with gradient seed and initials visuals
 export const withGradientSeed: React.FC = () => (
   <div>
     <div style={{ width: '45px' }}>
       <Avatar
-        text={text('Initials', 'KT')}
+        userInitials={text('Initials', 'KT')}
         gradientSeed={text('Gradient seed', '1234-1234-1234-1234')}
       />
     </div>
     <br />
     <div style={{ width: '32px' }}>
       <Avatar
-        text={text('Initials (small)', 'CC')}
+        userInitials={text('Initials (small)', 'CC')}
         gradientSeed={text('Gradient seed (small)', '5678-5678-5678-5678')}
       />
     </div>
@@ -38,53 +38,27 @@ export const withIcon: React.FC = () => (
     </div>
     <br />
     <div style={{ width: '45px' }}>
-      <Avatar
-        isSolid
-        iconKey="salesforce"
-        color={color('Background(3)', '#18a8d8')}
-      />
+      <Avatar isSolid iconKey="salesforce" color={color('Background(3)', '#18a8d8')} />
     </div>
     <br />
     <div style={{ width: '45px' }}>
-      <Avatar
-        isSolid
-        iconKey="magento"
-        color={color('Background(4)', '#c14800')}
-      />
+      <Avatar isSolid iconKey="magento" color={color('Background(4)', '#c14800')} />
     </div>
     <br />
     <div style={{ width: '32px' }}>
-      <Avatar
-        isSmallIcon
-        iconKey="paper-plane"
-        color={color('Background(1)', '#5644D')}
-      />
+      <Avatar isSmallIcon iconKey="paper-plane" color={color('Background(1)', '#5644D')} />
     </div>
     <br />
     <div style={{ width: '32px' }}>
-      <Avatar
-        isSmallIcon
-        iconKey="clock"
-        color={color('Background(2)', '#7BC4A9')}
-      />
+      <Avatar isSmallIcon iconKey="clock" color={color('Background(2)', '#7BC4A9')} />
     </div>
     <br />
     <div style={{ width: '32px' }}>
-      <Avatar
-        isSolid
-        isSmallIcon
-        iconKey="salesforce"
-        color={color('Background(3)', '#18a8d8')}
-      />
+      <Avatar isSolid isSmallIcon iconKey="salesforce" color={color('Background(3)', '#18a8d8')} />
     </div>
     <br />
     <div style={{ width: '32px' }}>
-      <Avatar
-        isSolid
-        isSmallIcon
-        iconKey="magento"
-        color={color('Background(4)', '#c14800')}
-      />
+      <Avatar isSolid isSmallIcon iconKey="magento" color={color('Background(4)', '#c14800')} />
     </div>
   </div>
 );
@@ -146,9 +120,7 @@ export const withInitials: React.FC = () => (
       />
     </div>
     <br />
-    <small>
-      User with only phone number (+4560860931) - should print &quot;31&quot;.
-    </small>
+    <small>User with only phone number (+4560860931) - should print &quot;31&quot;.</small>
     <div style={{ width: '45px' }}>
       <Avatar
         user={{
@@ -160,10 +132,7 @@ export const withInitials: React.FC = () => (
       />
     </div>
     <br />
-    <small>
-      User with name (John Something), email and phone number - should print
-      &quot;JS&quot;.
-    </small>
+    <small>User with name (John Something), email and phone number - should print &quot;JS&quot;.</small>
     <div style={{ width: '45px' }}>
       <Avatar
         user={{
@@ -175,10 +144,7 @@ export const withInitials: React.FC = () => (
       />
     </div>
     <br />
-    <small>
-      No name - only email (john@gmail.com) and phone number - should print
-      &quot;JG&quot;.
-    </small>
+    <small>No name - only email (john@gmail.com) and phone number - should print &quot;JG&quot;.</small>
     <div style={{ width: '45px' }}>
       <Avatar
         user={{
@@ -190,10 +156,7 @@ export const withInitials: React.FC = () => (
       />
     </div>
     <br />
-    <small>
-      No email - only name (John Something) and phone number - should print
-      &quot;JS&quot;.
-    </small>
+    <small>No email - only name (John Something) and phone number - should print &quot;JS&quot;.</small>
     <div style={{ width: '45px' }}>
       <Avatar
         user={{
