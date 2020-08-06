@@ -4,37 +4,11 @@ import Icon from './icon';
 import Image from './image';
 import styles from './avatar.module.scss';
 import { generateGradient } from '../../helpers/generateGradient';
+import { generateInitials } from '../../helpers/generateInitials';
 
 interface Props {
   user: Optional<User>;
   className?: string;
-}
-function generateInitials(userInfo = ''): string {
-  if (userInfo.indexOf(' ') > -1) {
-    // from full name.
-    const fullnameInitials = userInfo
-      .split(' ')
-      .map((name: string) => name[0])
-      .slice(0, 2)
-      .join('');
-    return fullnameInitials;
-  }
-  if (userInfo.indexOf('@') > -1) {
-    // from Email.
-    const emailInitials = userInfo
-      .split('@')
-      .map((name: string) => name[0])
-      .slice(0, 2)
-      .join('');
-    return emailInitials;
-  }
-  if (userInfo.indexOf('+') > -1) {
-    // from Phone number e.164 format.
-    const phonenrIntials = userInfo.slice(-2);
-    return phonenrIntials;
-  } // from one name
-  const nameInitials = userInfo.charAt(0);
-  return nameInitials;
 }
 
 const AvatarUser: FC<Props> = (props) => {

@@ -1,6 +1,7 @@
 import React from 'react';
 import { withKnobs, text, color } from '@storybook/addon-knobs';
-import Avatar from '../components/avatar';
+import AvatarImage from '../components/avatar/avatar-image';
+import AvatarIcon from '../components/avatar/avatar-icon';
 import AvatarUser from '../components/avatar/avatar-user';
 import AvatarText from '../components/avatar/avatar-text';
 
@@ -29,35 +30,35 @@ export const withGradientSeed: React.FC = () => (
 export const withIcon: React.FC = () => (
   <div>
     <div style={{ width: '45px' }}>
-      <Avatar iconKey="paper-plane" color={color('Background(1)', '#5644D8')} />
+      <AvatarIcon iconKey="paper-plane" color={color('Background(1)', '#5644D8')} />
     </div>
     <br />
     <div style={{ width: '45px' }}>
-      <Avatar iconKey="clock" color={color('Background(2)', '#7BC4A9')} />
+      <AvatarIcon iconKey="clock" color={color('Background(2)', '#7BC4A9')} />
     </div>
     <br />
     <div style={{ width: '45px' }}>
-      <Avatar isSolid iconKey="salesforce" color={color('Background(3)', '#18a8d8')} />
+      <AvatarIcon isSolid iconKey="salesforce" color={color('Background(3)', '#18a8d8')} />
     </div>
     <br />
     <div style={{ width: '45px' }}>
-      <Avatar isSolid iconKey="magento" color={color('Background(4)', '#c14800')} />
+      <AvatarIcon isSolid iconKey="magento" color={color('Background(4)', '#c14800')} />
     </div>
     <br />
     <div style={{ width: '32px' }}>
-      <Avatar isSmallIcon iconKey="paper-plane" color={color('Background(1)', '#5644D')} />
+      <AvatarIcon isSmallIcon iconKey="paper-plane" color={color('Background(1)', '#5644D')} />
     </div>
     <br />
     <div style={{ width: '32px' }}>
-      <Avatar isSmallIcon iconKey="clock" color={color('Background(2)', '#7BC4A9')} />
+      <AvatarIcon isSmallIcon iconKey="clock" color={color('Background(2)', '#7BC4A9')} />
     </div>
     <br />
     <div style={{ width: '32px' }}>
-      <Avatar isSolid isSmallIcon iconKey="salesforce" color={color('Background(3)', '#18a8d8')} />
+      <AvatarIcon isSolid isSmallIcon iconKey="salesforce" color={color('Background(3)', '#18a8d8')} />
     </div>
     <br />
     <div style={{ width: '32px' }}>
-      <Avatar isSolid isSmallIcon iconKey="magento" color={color('Background(4)', '#c14800')} />
+      <AvatarIcon isSolid isSmallIcon iconKey="magento" color={color('Background(4)', '#c14800')} />
     </div>
   </div>
 );
@@ -66,11 +67,11 @@ export const withIcon: React.FC = () => (
 export const withImage: React.FC = () => (
   <div>
     <div style={{ width: '45px' }}>
-      <Avatar imageSrc="https://global-uploads.webflow.com/5873645dcda6383b06dc220a/5b9a825ea6ef6021d01d6774_DIXA-426-2.jpg" />
+      <AvatarImage imageSrc="https://global-uploads.webflow.com/5873645dcda6383b06dc220a/5b9a825ea6ef6021d01d6774_DIXA-426-2.jpg" />
     </div>
     <br />
     <div style={{ width: '45px' }}>
-      <Avatar imageSrc="https://global-uploads.webflow.com/5873645dcda6383b06dc220a/5b645adbc899f51886b6f1dd_DSC_4137.jpg" />
+      <AvatarImage imageSrc="https://global-uploads.webflow.com/5873645dcda6383b06dc220a/5b645adbc899f51886b6f1dd_DSC_4137.jpg" />
     </div>
   </div>
 );

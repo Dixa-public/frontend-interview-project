@@ -5,7 +5,7 @@ function hue2rgb(p: number, q: number, t: number): number {
   if (newT < 0) newT += 1;
   if (newT > 1) newT -= 1;
   /* I could add a more informative name for the following calculations, 
-           if I would know what what the above mentioned variables stand for */
+             if I would know what what the above mentioned variables stand for */
   const calc1 = p + (q - p) * 6 * newT;
   const calc2 = p + (q - p) * (2 / 3 - newT) * 6;
   if (newT < 1 / 6) return calc1;
