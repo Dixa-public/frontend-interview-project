@@ -5,14 +5,8 @@ import Image from './image';
 import styles from './avatar.module.scss';
 
 interface Props {
+  user: Optional<User>;
   className?: string;
-  color?: string;
-  gradientSeed?: string;
-  imageSrc?: string;
-  userInitials?: string;
-  iconKey?: string;
-  isSolid?: boolean;
-  isSmallIcon?: boolean;
 }
 // what does p, q, t, parameters stands for? I would suggest writing whole words
 const hue2rgb = function(p: number, q: number, t: number): number {
@@ -59,6 +53,34 @@ function hslToRgb(hue: number, saturation: number, ligthness: number): Array<num
   return [roundedRed, roundedGreen, roundedBlue];
 }
 
+function generateInitials(userInfo = ''): string {
+  if (userInfo.indexOf(' ') > -1) {
+    // from full name.
+    const fullnameInitials = userInfo
+      .split(' ')
+      .map((name: string) => name[0])
+      .slice(0, 2)
+      .join('');
+    return fullnameInitials;
+  }
+  if (userInfo.indexOf('@') > -1) {
+    // from Email.
+    const emailInitials = userInfo
+      .split('@')
+      .map((name: string) => name[0])
+      .slice(0, 2)
+      .join('');
+    return emailInitials;
+  }
+  if (userInfo.indexOf('+') > -1) {
+    // from Phone number e.164 format.
+    const phonenrIntials = userInfo.slice(-2);
+    return phonenrIntials;
+  } // from one name
+  const nameInitials = userInfo.charAt(0);
+  return nameInitials;
+}
+
 function generateGradient(id: string): string {
   let hue = 0;
   let saturation1 = 65;
@@ -94,18 +116,8 @@ function generateGradient(id: string): string {
   return `linear-gradient(${angle}deg, rgb(${color1[0]},${color1[1]},${color1[2]}) 0%, rgb(${color2[0]},${color2[1]},${color2[2]}) 100%)`;
 }
 
-const Avatar: FC<Props> = (props) => {
-  const {
-    className,
-    color,
-    gradientSeed,
-    imageSrc,
-    iconKey,
-    userInitials,
-    isSolid,
-    isSmallIcon,
-    ...otherProps
-  } = props;
+const AvatarUser: FC<Props> = (props) => {
+  const { user, className, ...otherProps } = props;
 
   // `unknown type` - https://mariusschulz.com/blog/the-unknown-type-in-typescript
   const styleOverrides: Record<string, unknown> = {};
@@ -114,20 +126,29 @@ const Avatar: FC<Props> = (props) => {
   let isBackground = false;
   let printIcon = null;
 
-  // setting backgrounds of avatar based on different props
-  if (gradientSeed) {
-    styleOverrides.background = generateGradient(gradientSeed);
+  // setting background and label of avatar based on different props
+  if (user && user.avatarUrl) {
+    imageTag = <Image className={styles.image} src={user.avatarUrl} alt={user.name || ''} />;
+  } else if (user && !user.avatarUrl) {
+    styleOverrides.background = generateGradient(user.id);
     isBackground = true;
-  } else if (color) {
-    styleOverrides.backgroundColor = color;
+    const seed = user.name || user.email || user.phoneNumber || user.id;
+    if (seed === user.id) {
+      // Anonymous user.
+      printIcon = <Icon name="user-secret" className={styles.icon} />;
+      styleOverrides.background = '#CACACA';
+      isBackground = true;
+    } else {
+      label = generateInitials(seed);
+    }
+  } else if (user === null) {
+    // Unassigned
+    printIcon = <Icon name="user-slash" className={styles.icon} />;
+    styleOverrides.background = '#CACACA';
     isBackground = true;
-  } else if (imageSrc) {
-    imageTag = <Image className={styles.image} src={imageSrc} alt="" />;
-  }
-
-  // setting label of avatar based on different props
-  if (userInitials) {
-    label = userInitials;
+  } else {
+    styleOverrides.background = '#CACACA';
+    isBackground = true;
   }
 
   const rootClass = classnames(
@@ -135,19 +156,16 @@ const Avatar: FC<Props> = (props) => {
       [styles.avatar]: true,
       [styles.background]: isBackground,
       [styles.image]: imageTag !== null,
-      [styles.avatarSmallIcon]: isSmallIcon,
     },
     className,
   );
-
   return (
     <div {...otherProps} className={rootClass} style={styleOverrides}>
       {imageTag}
       {!!label && <span className={styles.label}>{label}</span>}
-      {!!iconKey && <Icon name={iconKey} isSolid={isSolid} className={styles.icon} />}
       {printIcon}
     </div>
   );
 };
 
-export default Avatar;
+export default AvatarUser;

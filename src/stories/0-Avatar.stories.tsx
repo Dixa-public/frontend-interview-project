@@ -1,6 +1,7 @@
 import React from 'react';
 import { withKnobs, text, color } from '@storybook/addon-knobs';
 import Avatar from '../components/avatar';
+import AvatarUser from '../components/avatar/avatar-user';
 
 export default {
   title: 'Avatar',
@@ -80,7 +81,7 @@ export const withImage: React.FC = () => (
 export const withUser: React.FC = () => (
   <div>
     <div style={{ width: '45px' }}>
-      <Avatar
+      <AvatarUser
         user={{
           id: '1234-1234-1234-1234',
           avatarUrl:
@@ -93,7 +94,7 @@ export const withUser: React.FC = () => (
     </div>
     <br />
     <div style={{ width: '45px' }}>
-      <Avatar
+      <AvatarUser
         user={{
           id: '1234-1234-1234-1234',
           name: 'John Doe',
@@ -110,7 +111,7 @@ export const withInitials: React.FC = () => (
   <div>
     <small>User with one name John - should print &quot;J&quot;.</small>
     <div style={{ width: '45px' }}>
-      <Avatar
+      <AvatarUser
         user={{
           id: '1234-1234-1234-1234',
           name: 'John',
@@ -122,7 +123,7 @@ export const withInitials: React.FC = () => (
     <br />
     <small>User with only phone number (+4560860931) - should print &quot;31&quot;.</small>
     <div style={{ width: '45px' }}>
-      <Avatar
+      <AvatarUser
         user={{
           id: '1234-1234-1234-1234',
           name: '',
@@ -134,7 +135,7 @@ export const withInitials: React.FC = () => (
     <br />
     <small>User with name (John Something), email and phone number - should print &quot;JS&quot;.</small>
     <div style={{ width: '45px' }}>
-      <Avatar
+      <AvatarUser
         user={{
           id: '1234-1234-1234-1234',
           name: 'John Something',
@@ -146,7 +147,7 @@ export const withInitials: React.FC = () => (
     <br />
     <small>No name - only email (john@gmail.com) and phone number - should print &quot;JG&quot;.</small>
     <div style={{ width: '45px' }}>
-      <Avatar
+      <AvatarUser
         user={{
           id: '1234-1234-1234-1234',
           name: '',
@@ -158,7 +159,7 @@ export const withInitials: React.FC = () => (
     <br />
     <small>No email - only name (John Something) and phone number - should print &quot;JS&quot;.</small>
     <div style={{ width: '45px' }}>
-      <Avatar
+      <AvatarUser
         user={{
           id: '1234-1234-1234-1234',
           name: 'John Something',
@@ -170,12 +171,12 @@ export const withInitials: React.FC = () => (
     <br />
     <h6>Anonymous - only id</h6>
     <div style={{ width: '45px' }}>
-      <Avatar user={{ id: '1234-1234-1234-1234' }} />
+      <AvatarUser user={{ id: '1234-1234-1234-1234' }} />
     </div>
     <br />
     <h6>Unassigned</h6>
     <div style={{ width: '45px' }}>
-      <Avatar user={null} />
+      <AvatarUser user={null} />
     </div>
   </div>
 );
