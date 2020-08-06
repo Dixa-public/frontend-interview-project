@@ -109,10 +109,8 @@ const Avatar: FC<Props> = (props) => {
 
   // `unknown type` - https://mariusschulz.com/blog/the-unknown-type-in-typescript
   const styleOverrides: Record<string, unknown> = {};
-  let label = '';
   let imageTag = null;
   let isBackground = false;
-  let printIcon = null;
 
   // setting backgrounds of avatar based on different props
   if (gradientSeed) {
@@ -123,11 +121,6 @@ const Avatar: FC<Props> = (props) => {
     isBackground = true;
   } else if (imageSrc) {
     imageTag = <Image className={styles.image} src={imageSrc} alt="" />;
-  }
-
-  // setting label of avatar based on different props
-  if (userInitials) {
-    label = userInitials;
   }
 
   const rootClass = classnames(
@@ -143,9 +136,7 @@ const Avatar: FC<Props> = (props) => {
   return (
     <div {...otherProps} className={rootClass} style={styleOverrides}>
       {imageTag}
-      {!!label && <span className={styles.label}>{label}</span>}
       {!!iconKey && <Icon name={iconKey} isSolid={isSolid} className={styles.icon} />}
-      {printIcon}
     </div>
   );
 };

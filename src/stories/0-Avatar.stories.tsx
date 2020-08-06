@@ -2,6 +2,7 @@ import React from 'react';
 import { withKnobs, text, color } from '@storybook/addon-knobs';
 import Avatar from '../components/avatar';
 import AvatarUser from '../components/avatar/avatar-user';
+import AvatarText from '../components/avatar/avatar-text';
 
 export default {
   title: 'Avatar',
@@ -12,15 +13,12 @@ export default {
 export const withGradientSeed: React.FC = () => (
   <div>
     <div style={{ width: '45px' }}>
-      <Avatar
-        userInitials={text('Initials', 'KT')}
-        gradientSeed={text('Gradient seed', '1234-1234-1234-1234')}
-      />
+      <AvatarText text={text('Initials', 'KT')} gradientSeed={text('Gradient seed', '1234-1234-1234-1234')} />
     </div>
     <br />
     <div style={{ width: '32px' }}>
-      <Avatar
-        userInitials={text('Initials (small)', 'CC')}
+      <AvatarText
+        text={text('Initials (small)', 'CC')}
         gradientSeed={text('Gradient seed (small)', '5678-5678-5678-5678')}
       />
     </div>
