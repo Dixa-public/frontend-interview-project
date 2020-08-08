@@ -1,9 +1,9 @@
 import React from 'react';
 import { withKnobs, text, color } from '@storybook/addon-knobs';
-import AvatarImage from '../components/avatar/avatar-image';
-import AvatarIcon from '../components/avatar/avatar-icon';
-import AvatarUser from '../components/avatar/avatar-user';
-import AvatarText from '../components/avatar/avatar-text';
+import AvatarImage from '../components/avatar/image';
+import AvatarIcon from '../components/avatar/icon';
+import AvatarUser from '../components/avatar/user';
+import AvatarText from '../components/avatar/text';
 
 export default {
   title: 'Avatar',

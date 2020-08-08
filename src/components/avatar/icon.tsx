@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
 import classnames from 'classnames';
-import Icon from './icon';
+import Icon from '../shared/icon';
 import styles from './avatar.module.scss';
 
 interface Props {

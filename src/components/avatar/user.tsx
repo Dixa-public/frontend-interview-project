@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
 import classnames from 'classnames';
-import Icon from './icon';
-import Image from './image';
+import Icon from '../shared/icon';
+import Image from '../shared/image';
 import styles from './avatar.module.scss';
 import { generateGradient } from '../../helpers/generateGradient';
 import { generateInitials } from '../../helpers/generateInitials';
