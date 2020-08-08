@@ -1,3 +1,24 @@
+## Solution
+
+Since I haven't worked with React before I started out researching the different component types, seeing that the project was built using Functional Components yet the Contribution guide suggests using pureComponents.
+
+I quickly found out that in React you mainly use Functional Components or the classical Class component. And pure components are a type of Class component. 
+
+A short summary I made upon my research to understand the difference between them and their use cases.
+
+- FC - a presentational component that does not have its own state nor life-cycle hooks.
+- CC - a container component that has its own state and life-cycle hooks.
+- PC - state or props are not updated ⇨ therefore, no re-rendering is needed.
+
+### The task
+
+I picked the option of improving an existing component, namely the avatar.
+
+I started out by understanding the context and the code, at that point, I did some restructuring of the components' folder, fixed some little things and commented across the avatar context, improved the code generally of avatar component.
+
+Looking at the context, it did not seem to me that the avatar component would need state nor life-cycle hooks that is why I kept it as a FC. However, the component was very big, almost 200 lines and with lots of different optional props that were used then in a long if/else if statements block. Observing this long list of props, I realized that they could be grouped together based on their combination in the avatar stories. So, for instance, iconKey, isSolid, isSmallIcon, color are used together, that is why I made a component just for them called AvatarIcon. I approached the same way with the rest of the props until I ended up with four small components instead of one big. Also, complex functions that were needed by multiple components were extracted in separate files, in the helpers folder.
+
+
 ## Frontend interview project
 
 As part of our application process, we would like you to complete this take-home assignment. It should take no more than a few hours.
