@@ -4,7 +4,7 @@ import Icon from '../shared/icon';
 import styles from './avatar.module.scss';
 
 interface Props {
-  className?: string;
+  className: string;
   color: string;
   iconKey: string;
   isSolid?: boolean;

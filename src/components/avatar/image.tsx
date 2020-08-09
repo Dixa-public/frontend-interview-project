@@ -4,7 +4,7 @@ import Image from '../shared/image';
 import styles from './avatar.module.scss';
 
 interface Props {
-  className?: string;
+  className: string;
   imageSrc: string;
 }
 

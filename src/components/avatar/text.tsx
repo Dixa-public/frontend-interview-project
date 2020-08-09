@@ -4,7 +4,7 @@ import styles from './avatar.module.scss';
 import { generateGradient } from '../../helpers/generateGradient';
 
 interface Props {
-  className?: string;
+  className: string;
   gradientSeed: string;
   text: string;
 }

@@ -8,7 +8,7 @@ import { generateInitials } from '../../helpers/generateInitials';
 
 interface Props {
   user: Optional<User>;
-  className?: string;
+  className: string;
 }
 
 const AvatarUser: FC<Props> = (props) => {
