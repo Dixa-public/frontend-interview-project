@@ -55,7 +55,6 @@ const Divider: React.FC<DividerProps> = (props) => {
       color: '${color}';
       padding: 0 0.5em;
       line-height: 1.5em;
-      color: #818078;
       background-color: #fcfcfa;
     }
   `;
