@@ -10,25 +10,23 @@ export const regular: React.FC = () => (
 
 export const withSize: React.FC = () => (
   <div style={{ position: 'relative' }}>
-    <Divider size="4px" color={text('color', '')} />
+    <Divider size={text('size', '4px')} color={text('color', '')} />
   </div>
 );
 
 export const withText: React.FC = () => (
   <div style={{ position: 'relative' }}>
-    <Divider color={text('color3', 'tomato')} text="Hello" />
+    <Divider text={text('text', 'Hello')} />
   </div>
 );
 
-export const withDotted: React.FC = () => (
+export const withType: React.FC = () => (
   <div style={{ position: 'relative' }}>
-    <Divider size="3px" color={text('color3', 'tomato')} type="dotted" />
-  </div>
-);
-
-export const withDash: React.FC = () => (
-  <div style={{ position: 'relative' }}>
-    <Divider size="3px" color={text('color3', 'tomato')} type="dashed" />
+    <Divider
+      size="3px"
+      color={text('color', 'tomato')}
+      type={text('type', 'dashed')}
+    />
   </div>
 );
 

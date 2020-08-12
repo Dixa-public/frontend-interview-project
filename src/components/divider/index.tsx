@@ -2,7 +2,7 @@ import * as React from 'react';
 import styled from 'styled-components';
 
 export interface DividerProps {
-  type?: 'solid' | 'dashed' | 'dotted';
+  type?: 'solid' | 'dashed' | 'dotted' | string;
   textOrientation?: 'center' | 'right' | 'left';
   size?: string;
   className?: string;
