@@ -1,0 +1,12 @@
+@import '../../styles/includes/colors';
+
+.tagItem {
+    padding: 8px 5px;
+    background: $dixa-very-blue;
+    color: white;
+    margin-left: 10px;
+
+    &:first-child{
+        margin: 0;
+    }
+}

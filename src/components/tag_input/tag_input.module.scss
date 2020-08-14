@@ -1,0 +1,51 @@
+
+@import '../../styles/includes/colors';
+
+
+.tagInput {
+    list-style: none;
+    padding:15px;
+    border: 1px solid $dixa-very-blue;
+    display: flex;
+    align-items: center;
+
+    &Small{
+        font-size: 12px;
+    }
+
+    &Medium{
+        font-size: 16px;
+    }
+
+    &Large{
+        font-size: 20px;
+    }
+
+    &:focus{
+        border: 1px solid $color-button-info;
+    }
+
+    &.onError {
+        border: 1px solid $red;
+    }
+
+    + .errorHolder{
+        color: $red;
+        padding: 2px 0;
+    }
+
+    .tagItem{
+        padding: 2px 5px;
+        background: $dixa-very-blue;
+        color: white;
+        margin-left: 10px;
+
+        &:first-child{
+            margin: 0;
+        }
+    }
+
+    input[type="text"] {
+        flex-grow: 1;
+    }
+}
