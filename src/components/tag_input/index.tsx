@@ -31,11 +31,10 @@ const TagInput: React.FC<Props> = (props) => {
   const rootClass = classnames(
     {
       [styles.tagInput]: true,
-      [styles.tagItem]: true,
       [styles.tagInputSmall]: isSmall,
       [styles.tagInputMedium]: isMedium,
       [styles.tagInputLarge]: isLarge,
-      [styles.errorHolder]: showError,
+      [styles.onError]: showError,
     },
     className,
   );
@@ -98,23 +97,26 @@ const TagInput: React.FC<Props> = (props) => {
       <ul {...otherProps} style={styles} className={rootClass}>
          
           {tagItemList.map( (item: TagItemInterface) => {
-              return <li key={item.id}><TagItem item={item} removeItem={()=> removeItem(item.id)}/></li>
+              return <TagItem key={item.id} item={item} removeItem={()=> removeItem(item.id)}/>
             })
           }
          
-          <li>
-            <input
-                  type="text"
-                  placeholder="Add a new tag"
-                  value={tagItemText}
-                  onChange={onInputChange}
-                  onKeyPress={onKeyEnter}
-                />
-          </li>
+        
+          <input
+                type="text"
+                placeholder="Add a new tag"
+                value={tagItemText}
+                onChange={onInputChange}
+                onKeyPress={onKeyEnter}
+              />
+          
         </ul>
-        <div className="errorHolder">{showError && <span>Tag is duplicated</span>}</div>
+        <div className={styles.errorHolder}>{showError && <span>Tag is duplicated</span>}</div>
     </div> 
   )
 };
 
 export default TagInput;
+
+
+

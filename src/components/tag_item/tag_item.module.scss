@@ -1,12 +1,26 @@
-@import '../../styles/includes/colors';
+@import '../../styles/import';
 
 .tagItem {
-    padding: 8px 5px;
+    padding: 0.3em 0.5em;
     background: $dixa-very-blue;
     color: white;
-    margin-left: 10px;
+    margin-right: 10px;
+    border-radius: $dixa-border-radius;
+    display: inline-flex;
+    place-items: center;
+    &:last-child{
+        flex-grow: 1;
+    }
 
-    &:first-child{
-        margin: 0;
+   .Button{
+        background: $dixa-fluo-purple;
+        color: $dixa-very-blue;
+        border: none;
+        cursor: pointer;
+        margin-left: 0.5rem;
+        border-radius: $dixa-border-radius;
     }
 }
+
+
+    

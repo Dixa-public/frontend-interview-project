@@ -1,51 +1,47 @@
 
-@import '../../styles/includes/colors';
+@import '../../styles/import';
 
 
 .tagInput {
     list-style: none;
-    padding:15px;
+    padding: 0.4rem;
     border: 1px solid $dixa-very-blue;
     display: flex;
     align-items: center;
-
+    border-radius: $dixa-border-radius;
+   
     &Small{
-        font-size: 12px;
+        font-size: 0.8rem;
+        line-height: 0.8rem;
     }
 
     &Medium{
-        font-size: 16px;
+        font-size: 1.1rem;
+        line-height: 1.1rem;
     }
 
     &Large{
-        font-size: 20px;
-    }
-
-    &:focus{
-        border: 1px solid $color-button-info;
+        font-size: 1.3rem;
+        line-height: 1.3rem;
     }
 
     &.onError {
         border: 1px solid $red;
     }
-
-    + .errorHolder{
+   
+}
+    .errorHolder{
         color: $red;
         padding: 2px 0;
     }
 
-    .tagItem{
-        padding: 2px 5px;
-        background: $dixa-very-blue;
-        color: white;
-        margin-left: 10px;
-
-        &:first-child{
-            margin: 0;
-        }
-    }
-
     input[type="text"] {
         flex-grow: 1;
+        border-color: transparent;
+        font-size: inherit;
+        line-height: inherit;
+        &:focus,
+        &:active{
+            outline: none;
+        }
     }
-}
