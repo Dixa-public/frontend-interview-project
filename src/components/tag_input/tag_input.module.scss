@@ -1,0 +1,47 @@
+
+@import '../../styles/import';
+
+
+.tagInput {
+    list-style: none;
+    padding: 0.4rem;
+    border: 1px solid $dixa-very-blue;
+    display: flex;
+    align-items: center;
+    border-radius: $dixa-border-radius;
+   
+    &Small{
+        font-size: 0.8rem;
+        line-height: 0.8rem;
+    }
+
+    &Medium{
+        font-size: 1.1rem;
+        line-height: 1.1rem;
+    }
+
+    &Large{
+        font-size: 1.3rem;
+        line-height: 1.3rem;
+    }
+
+    &.onError {
+        border: 1px solid $red;
+    }
+   
+}
+    .errorHolder{
+        color: $red;
+        padding: 2px 0;
+    }
+
+    input[type="text"] {
+        flex-grow: 1;
+        border-color: transparent;
+        font-size: inherit;
+        line-height: inherit;
+        &:focus,
+        &:active{
+            outline: none;
+        }
+    }
