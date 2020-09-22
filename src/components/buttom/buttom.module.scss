@@ -1,0 +1,26 @@
+@import "../../styles/includes/colors";
+
+.input {
+    border-radius: 6px;
+    padding: 10px;
+    color: $dixa-blue;
+    background-color: $dixa-light-purple;
+    border: 1px solid $dixa-pastel; 
+}
+
+.info {
+  color: $tangerine;
+  background-color: $color-button-info;
+  border: 1px solid $dixa-pastel; 
+}
+.success {
+  color: $dixa-blue;
+  background-color: $color-button-success;
+  border: 1px solid $dixa-pastel; 
+}
+.small {
+font-size: 12px;
+}
+.big {
+font-size: 24px;
+}

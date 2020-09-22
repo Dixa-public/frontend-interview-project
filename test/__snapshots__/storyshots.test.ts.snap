@@ -658,6 +658,27 @@ exports[`Storyshots Chart Regular 1`] = `
 </div>
 `;
 
+exports[`Storyshots Icon Regular 1`] = `
+<div>
+  <i
+    className="fas fa-user"
+  />
+  <i
+    className="fa fa-user-slash"
+  />
+</div>
+`;
+
+exports[`Storyshots Image Regular 1`] = `
+<div>
+  <img
+    className=""
+    onError={[Function]}
+    onLoad={[Function]}
+  />
+</div>
+`;
+
 exports[`Storyshots Spinner Regular 1`] = `
 <div
   style={
