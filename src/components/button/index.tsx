@@ -11,8 +11,8 @@ interface Props {
   type: string;
 }
 
-const Buttom: React.FC<Props> = (props) => {
-  const { size, value, type, variant, className } = props;
+const Button: React.FC<Props> = (props) => {
+  const { size, value, type, variant } = props;
   const rootClass = classnames(
     [ 
         styles.input,
@@ -26,4 +26,4 @@ const Buttom: React.FC<Props> = (props) => {
   return <input value={value} type={type} className={rootClass} />;
 };
 
-export default Buttom;
+export default Button;

@@ -1,21 +1,21 @@
 import React from 'react';
-import Buttom from '../components/buttom';
+import Button from '../components/button';
 
 export const regular: React.FC = () => (
   <div>
-    <Buttom
+    <Button
         variant="default"
         size="small"
         type="submit"
         value="click me I'm default small"
     />
-    <Buttom
+    <Button
         variant="success"
         size="big"
         type="submit"
         value="click me I'm a success bigger"
     />
-    <Buttom
+    <Button
         variant="info"
         size="small"
         type="submit"
@@ -25,5 +25,5 @@ export const regular: React.FC = () => (
 );
 
 export default {
-  title: 'Buttom'
+  title: 'Button'
 };

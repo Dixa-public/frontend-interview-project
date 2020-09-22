@@ -477,6 +477,26 @@ exports[`Storyshots Avatar With User 1`] = `
 </div>
 `;
 
+exports[`Storyshots Button Regular 1`] = `
+<div>
+  <input
+    className=""
+    type="submit"
+    value="click me I'm default small"
+  />
+  <input
+    className=""
+    type="submit"
+    value="click me I'm a success bigger"
+  />
+  <input
+    className=""
+    type="submit"
+    value="click me I'm a info small"
+  />
+</div>
+`;
+
 exports[`Storyshots Chart Regular 1`] = `
 <div>
   <div
