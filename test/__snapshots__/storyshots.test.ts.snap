@@ -658,6 +658,69 @@ exports[`Storyshots Chart Regular 1`] = `
 </div>
 `;
 
+exports[`Storyshots PieChart Regular 1`] = `
+<div>
+  <div>
+    <div
+      style={
+        Object {
+          "background": "conic-gradient(#808080 0deg, #FF9430 2deg 180deg, #808080 180deg, #46DB75 182deg 288deg, #808080 288deg, #00A9FF 290deg)",
+          "borderColor": "#808080",
+          "height": "200px",
+          "width": "200px",
+        }
+      }
+    >
+      <div
+        style={
+          Object {
+            "left": 166.66666666666669,
+            "top": 100,
+          }
+        }
+      >
+        <div>
+          50
+          <span>
+            %
+          </span>
+        </div>
+      </div>
+      <div
+        style={
+          Object {
+            "left": 46.065533708336844,
+            "top": 139.1856834861649,
+          }
+        }
+      >
+        <div>
+          30
+          <span>
+            %
+          </span>
+        </div>
+      </div>
+      <div
+        style={
+          Object {
+            "left": 60.81431651383511,
+            "top": 46.065533708336844,
+          }
+        }
+      >
+        <div>
+          20
+          <span>
+            %
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`Storyshots Spinner Regular 1`] = `
 <div
   style={
