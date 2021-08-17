@@ -19,13 +19,13 @@ As part of our application process, we would like you to complete this assignmen
 
 ### Setting up the project:
 
-1. Click `Use this template` at the top of the repo and create a **private repo** in your personal GitHub account
+1. [Use this template](https://github.com/Dixa-public/frontend-interview-project/generate) to create a **private repo** in your personal GitHub account.
 2. Run `git clone git@github.com:{USERNAME}/frontend-interview-project.git` to clone the newly created repo.
 3. Open the project directory with `cd frontend-interview-project`.
 4. Run `npm i` command to install the dependencies.
 5. Run `npm run storybook` to start Storybook.
 
-> DO NOT fork this template repository or create Pull Requests against it. Use the `Use this template` button to create your own.
+> DO NOT fork this template repository or create Pull Requests against it. [Use this template](https://github.com/Dixa-public/frontend-interview-project/generate) to create your own.
 
 ### Requirements:
 - [NodeJs](https://nodejs.org)
