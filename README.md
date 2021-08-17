@@ -20,7 +20,7 @@ As part of our application process, we would like you to complete this assignmen
 ### Setting up the project:
 
 1. [Use this template](https://github.com/Dixa-public/frontend-interview-project/generate) to create a **private repo** in your personal GitHub account.
-2. Run `git clone git@github.com:{USERNAME}/frontend-interview-project.git` to clone the newly created repo.
+2. Run `git clone git@github.com:{USERNAME}/frontend-interview-project.git` to clone the repo.
 3. Open the project directory with `cd frontend-interview-project`.
 4. Run `npm i` command to install the dependencies.
 5. Run `npm run storybook` to start Storybook.
